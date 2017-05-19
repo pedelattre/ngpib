@@ -1,0 +1,57 @@
+{
+  "HEADER": {
+    "TITLE": "HSBC France, your online banking",
+    "SELECT": "Change language",
+    "LOGOUT": "Logout"
+  },
+  "MAIN": {
+    "MESS1": "Your are connected securely to your online banking.",
+    "HELP": "Help",
+    "PRINT": "Print",
+    "WELCOME": "Welcome",
+    "LAST_CONN": "Your last connection was on {{value1}} at {{value2}}.",
+    "DSP_ALERT": "Display alert",
+    "HID_ALERT": "Hide alert"
+  },
+  "FOOTER" : {
+    "CONTACT_US" : "Contact us",
+    "BRANCH_LOCATOR": "Where find HSBC ?",
+    "WHO-ARE-WE" : "Who are we ?",
+    "SECURITY" : "Security",
+    "LEGAL" : "Legal terms",
+    "PRICING" : "Pricing",
+    "HELP" : "Help",
+    "MIF" : "MIF",
+    "COPYRIGHT" : "Copyright HSBC France {{currentYear}}. All rights reserved."
+  },
+  "NAVBAR": {
+    "DASHBOARD" : "My dashboard",
+    "PRODUCTS" : "My products",
+    "SHORTCUTS" : "My shortcuts",
+    "TRANSFERTS" : "My transferts",
+    "SAVINGS" : "My savings",
+    "LOANS" : "My Loans",
+    "WEALTH" : "My wealth",
+    "PROFILE" : "My profile",
+    "DETAILS" : "My details",
+    "SECURITY" : "My security",
+    "ALERTS" : "My alerts",
+    "HELP" : "Help",
+    "SEARCH" : "Search",
+    "HISTO" : "Transaction history"
+  },
+  "HISTO" : {
+      "TITLE" : "Transaction history",
+      "TYPE" : "Type",
+      "DATE" : "Date",
+      "DETAILS" : "Details",
+      "CREDIT_AMOUNT": "Credit",
+      "DEBIT_AMOUNT": "Debit"
+  },
+  "LOGIN" : {
+    "TITLE" : "Login",
+    "NAME" : "My identifier",
+    "PASSWORD" : "My password",
+    "ACTION" : "I'm connecting"
+  }
+}

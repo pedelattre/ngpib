@@ -1,0 +1,34 @@
+<div class="transaction-list">
+    <h2>{{ 'HISTO.TITLE' | translate }}</h2>
+
+    <div class="table-responsive">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>{{ 'HISTO.TYPE' | translate }}</td>
+                    <td>{{ 'HISTO.DATE' | translate }}</td>
+                    <td>{{ 'HISTO.DETAILS' | translate }}</td>
+                    <td>{{ 'HISTO.CREDIT_AMOUNT' | translate }}</td>
+                    <td>{{ 'HISTO.DEBIT_AMOUNT' | translate }}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactions">
+                    <td><strong>{{transaction.type}}</strong></td>
+                    <td>{{transaction.date}}</td>
+                    <td>{{transaction.details}}</td>
+                    <td>{{transaction.debitAmt}}</td>
+                    <td>{{transaction.creditAmt}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!--"type": "Credit",
+"date": "29/12/2016",
+"details": ["VIREMENT SEPA RECU   YCI4 01493", "6358154726006278", "HSBC-FR PAIE DRH"],
+"debitAmt": "",
+"creditAmt": "4 231,82"-->

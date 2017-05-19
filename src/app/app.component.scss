@@ -1,0 +1,23 @@
+.app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.app-content {
+    margin-top: 80px;
+    flex: 1 0 10%;
+    // flex: auto; 
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+.app-footer {
+    padding: 30px;
+}
+
+// footer {
+//   background: #42A5F5;
+//   color: white;
+//   padding: 20px;
+// }

@@ -1,0 +1,303 @@
+{
+    "body": {
+        "histories": [{
+                "type": "Debit",
+                "date": "30/12/2016",
+                "details": ["VIREMENT SEPA EMIS - Z20C-12732"],
+                "debitAmt": "-10,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "29/12/2016",
+                "details": ["VIREMENT SEPA RECU   YCI4 01493", "6358154000000000", "HSBC-FR PAIE DRH"],
+                "debitAmt": "",
+                "creditAmt": "400 231,82"
+            }, {
+                "type": "Debit",
+                "date": "27/12/2016",
+                "details": ["VIREMENT SEPA EMIS   YCO3 01586", "NOEL", "ANONYME ELEONORE", "M   ANONYME PRENOM"],
+                "debitAmt": "-100,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "27/12/2016",
+                "details": ["DAB 24/12 14H49 ORLEANS CEDEX", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-40,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "19/12/2016",
+                "details": ["VIREMENT SEPA EMIS   YCO5 01975", "COTISATION ASSOCIATION VTT", "ASH VTT LES BOUCHONS", "M   ANONYME PRENOM"],
+                "debitAmt": "-117,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "15/12/2016",
+                "details": ["VIREMENT SEPA RECU   YCI0 11832", "P540283", "CACEIS CORPORATE TRUST SA", "HSBC HOLDINGS PLC"],
+                "debitAmt": "",
+                "creditAmt": "19,78"
+            }, {
+                "type": "Debit",
+                "date": "15/12/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI2 09644", "FR90ZZZ111201", "APRR", "??SIT0000000000010", "APRR/Contrat 000000000001/REF:"],
+                "debitAmt": "-21,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "08/12/2016",
+                "details": ["DAB 07/12 13H06 LCL COURBEVOIE", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-40,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "07/12/2016",
+                "details": ["Paiement de 376", "Coupons à 0,09557 EUR", "HSBC HOLDINGS"],
+                "debitAmt": "",
+                "creditAmt": "22,81"
+            }, {
+                "type": "Debit",
+                "date": "07/12/2016",
+                "details": ["OPERATION SUR TITRE", "Régularisation espèces"],
+                "debitAmt": "-29,14",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "06/12/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI3 05445", "FR07ZZZ591778", "FREE MOBILE", "++FM-12002420-1"],
+                "debitAmt": "-15,99",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "06/12/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI3 09146", "FR83ZZZ459654", "FREE TELECOM", "16983874", "Free HautDebit 669744464"],
+                "debitAmt": "-39,99",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "05/12/2016",
+                "details": ["FACTURES CB 000015", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-849,39",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "05/12/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI4 20599", "FR14ZZZ391832", "AXA", "++NO000000001619252801", "I0000217009081-CONTRAT000000001"],
+                "debitAmt": "-89,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "05/12/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI3 23475", "FR43ZZZ299936", "MATMUT ROUEN", "SOC750304007322DMDT00", "2016120500002350020616399"],
+                "debitAmt": "-129,84",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "05/12/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI4 33610", "FR42ZZZ457385", "NAVIGO ANNUEL - GIE COMUTITRES", "++FR42ZZZ457385000000657867-104", "Navigo Annuel"],
+                "debitAmt": "-73,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "01/12/2016",
+                "details": ["VIREMENT SEPA EMIS   YCO4 00946", "VIREMENT", "MME HAVARD CATHY", "M  PRENOM ANONYME"],
+                "debitAmt": "-656,54",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "30/11/2016",
+                "details": ["VIREMENT SEPA EMIS - Z20C-02175", "VIREMENT COMPTE JOINT", "M/M PRENOM ANONYME", "ANONYME PRENOM"],
+                "debitAmt": "-2 000,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "29/11/2016",
+                "details": ["VIREMENT SEPA RECU   YCI8 02490", "6329154617006312", "HSBC-FR PAIE DRH"],
+                "debitAmt": "",
+                "creditAmt": "8 816,42"
+            }, {
+                "type": "Debit",
+                "date": "29/11/2016",
+                "details": ["VIREMENT SEPA EMIS - Z20C-13637", "LIVA", "ANONYME PRENOM", "ANONYME PRENOM"],
+                "debitAmt": "-3 000,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "29/11/2016",
+                "details": ["VIREMENT SEPA EMIS - Z20C-13643", "LDD", "ANONYME PRENOM", "ANONYME PRENOM"],
+                "debitAmt": "-1 000,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "28/11/2016",
+                "details": ["DAB 26/11 18H30 HERBLAY", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-20,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "22/11/2016",
+                "details": ["DAB 21/11 12H42 LCL COURBEVOIE", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-20,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "18/11/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI9 03800", "FR90ZZZ111201", "APRR", "??SIT0000000000010", "APRR/Contrat 000000000001/REF:"],
+                "debitAmt": "-86,90",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "15/11/2016",
+                "details": ["VIREMENT SEPA RECU - Z20C-03013", "REGUL", "ANONYME PRENOM"],
+                "debitAmt": "",
+                "creditAmt": "100,00"
+            }, {
+                "type": "Debit",
+                "date": "08/11/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI3 12332", "FR83ZZZ459654", "FREE TELECOM", "16983874", "Free HautDebit 606060606"],
+                "debitAmt": "-39,99",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "05/11/2016",
+                "details": ["FACTURES CB 000047", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-1 650,02",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "07/11/2016",
+                "details": ["VIREMENT SEPA RECU - Z20C-25355", "REGUL", "ANONYME PRENOM"],
+                "debitAmt": "",
+                "creditAmt": "100,00"
+            }, {
+                "type": "Debit",
+                "date": "07/11/2016",
+                "details": ["VIREMENT SEPA EMIS - Z20C-25377", "KFE", "MOULIN BEBER", "ANONYME PRENOM"],
+                "debitAmt": "-39,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "07/11/2016",
+                "details": ["CHEQUE                 0829804"],
+                "debitAmt": "-17,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "07/11/2016",
+                "details": ["CHEQUE                 0829805"],
+                "debitAmt": "-17,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "07/11/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI8 37906", "FR14ZZZ391832", "ALA", "++NO000000001619252801", "I0000211641430-CONTRAT000000001"],
+                "debitAmt": "-89,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "07/11/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI6 44294", "FR43ZZZ299936", "MUCHMUCH ROUEN", "SOC750304007322DMDT00", "2016110700002290020623742"],
+                "debitAmt": "-129,84",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "07/11/2016",
+                "details": ["DAB 05/11 15H34 ORSAY", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-30,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "04/11/2016",
+                "details": ["VIREMENT SEPA RECU - Z20C-05103", "REGUL", "ANONYME PRENOM"],
+                "debitAmt": "",
+                "creditAmt": "120,00"
+            }, {
+                "type": "Debit",
+                "date": "04/11/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI8 09171", "FR07ZZZ591778", "FREE MOBILE", "++FM-12002420-1"],
+                "debitAmt": "-15,99",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "03/11/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI3 02980", "FR42ZZZ457385", "NAVIGO ANNUEL - GIE COMUTITRES", "++FR42ZZZ457385000000657867-104", "Navigo Annuel"],
+                "debitAmt": "-73,00",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "01/11/2016",
+                "details": ["VIREMENT SEPA EMIS   YCO2 00940", "VIREMENT", "MME RORORO LOLO", "M  PRENOM ANONYME"],
+                "debitAmt": "-656,54",
+                "creditAmt": ""
+            }, {
+                "type": "Debit",
+                "date": "31/10/2016",
+                "details": ["VIREMENT SEPA EMIS - Z20C-02349", "VIREMENT COMPTE JOINT", "M/M PRENOM ANONYME", "ANONYME PRENOM"],
+                "debitAmt": "-2 000,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "28/10/2016",
+                "details": ["VIREMENT SEPA RECU   YCI2 02743", "6299100000000000", "HSBC-FR PAIE DRH"],
+                "debitAmt": "",
+                "creditAmt": "4 231,82"
+            }, {
+                "type": "Credit",
+                "date": "14/10/2016",
+                "details": ["VIREMENT SEPA RECU   YCI3 01234", "162870005444", "CHOUP VAL D.ORGE", "162870005444162870005444"],
+                "debitAmt": "",
+                "creditAmt": "17,01"
+            }, {
+                "type": "Credit",
+                "date": "10/10/2016",
+                "details": ["VIREMENT SEPA RECU - Z20C-08414", "REGUL", "ANONYME PRENOM"],
+                "debitAmt": "",
+                "creditAmt": "70,00"
+            }, {
+                "type": "Debit",
+                "date": "10/10/2016",
+                "details": ["DAB 09/10 06H46 ORLEINS", "CB N° 4561 00XX XXXX 3071"],
+                "debitAmt": "-20,00",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "07/10/2016",
+                "details": ["VIREMENT SEPA RECU   YCI8 09704", "P515550", "KAKA CORPORATE TRUST SA", "HSBC OULA"],
+                "debitAmt": "",
+                "creditAmt": "18,38"
+            }, {
+                "type": "Debit",
+                "date": "07/10/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI6 17053", "FR83ZZZ459654", "FREE TELECOM", "16983874", "Free TresBasDebit 600000000"],
+                "debitAmt": "-37,97",
+                "creditAmt": ""
+            }, {
+                "type": "Credit",
+                "date": "06/10/2016",
+                "details": ["VIREMENT SEPA RECU - Z20C-03180", "REGUL", "ANONYME PRENOM"],
+                "debitAmt": "",
+                "creditAmt": "180,00"
+            }, {
+                "type": "Debit",
+                "date": "06/10/2016",
+                "details": ["PRLV SEPA RECU RCUR  YDI6 11689", "FR07ZZZ591778", "FREE MOBILE", "++FM-12002420-1"],
+                "debitAmt": "-15,99",
+                "creditAmt": ""
+            }
+
+        ],
+        "acctProdType": ["DD"],
+        "acctCcy": {
+            "desc": "EUR",
+            "code": "EUR"
+        },
+        "hasNext": false,
+        "isMaxMessageWarning": false,
+        "linkIBAN": "sessionid=1C3D1C1B0303ABEA4781496148D2A5E3446F0ACE7C2C0619F040E410567A2EA9"
+    },
+    "header": {
+        "version": "1.1",
+        "token": "0.7747704947513937",
+        "errorMsg": [],
+        "statusCode": "0000"
+    }
+}

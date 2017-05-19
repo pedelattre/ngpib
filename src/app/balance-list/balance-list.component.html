@@ -1,0 +1,71 @@
+<div class="balance-list">
+    <!--<div class="table-responsive">-->
+    <div class="transaction-balance">
+        <label><h3>Comptes courants</h3>
+      <span>Total: TODO</span>
+    </label>
+    </div>
+   
+    <div class="transaction-balance">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Compte</td>
+                    <td>Numéro de compte</td>
+                    <td>Solde</td>
+                    <td>Devise</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let balance of balancesOfCC" class="sensibleLine" (click)="getHisto(balance)">
+                    <td><strong>{{balance.accountName}}</strong></td>
+                    <td>{{balance.accountNumber}}</td>
+                    <td>{{balance.amount}}</td>
+                    <td>{{balance.currencyCode}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="transaction-balance">
+        <label><h3>Placements</h3>
+      <span>Total: TODO</span>
+    </label>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Compte</td>
+                <td>Numéro de compte</td>
+                <td>Solde</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let balance of balancesOfPP">
+                <td><strong>{{balance.accountName}}</strong></td>
+                <td>{{balance.accountNumber}}</td>
+                <td>{{balance.amount}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Total des avoirs : TODO</h3>
+    <div class="transaction-balance">
+        <label>Crédits
+      <span>Total: TODO</span>
+    </label>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Crédits</td>
+                <td>Référence</td>
+                <td>Montant</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let balance of balancesOfPP">
+                <td><strong>{{balance.accountName}}</strong></td>
+                <td>{{balance.accountNumber}}</td>
+                <td>{{balance.amount}}</td>
+            </tr>
+        </tbody>
+    </table>

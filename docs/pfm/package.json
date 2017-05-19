@@ -1,0 +1,24 @@
+{
+  "name": "pfm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SOUSCRIPTION_NOMINAL_SaaS.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request-promise": "^3.0.0",
+    "request-debug": "^0.2.0"
+  },
+  "engines" :  {
+    "node": "5.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node SOUSCRIPTION_NOMINAL_SaaS.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@alm-github.systems.uk.hsbc:43317205/pfm.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

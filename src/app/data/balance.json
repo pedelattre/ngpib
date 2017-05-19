@@ -1,0 +1,144 @@
+{
+	"body": {
+		"entities": [{
+			"newMsgNumber": "0",
+			"accountGroups": [{
+				"accounts": [
+					{
+						"desc": "COMPTE M. RONDEPIERRE EDOUARD",
+						"hasParent": false,
+						"accountNum": "00297551503.EUR",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "DD",
+						"id": "CPTP",
+						"accountDate": "",
+						"balance": "4 594,13",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD3370FD235CD654C9A4BE63CB2A84F0535AC&Cpt=-1&posCptSel=0"
+					} , {
+						"desc": "COMPTE M/M M. OUMME EDOUARD RONDEPIERRE",
+						"hasParent": false,
+						"accountNum": "00290066716.EUR",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "DD",
+						"id": "CPTA0",
+						"accountDate": "",
+						"balance": "1,58",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD337DF9913CAAEBEB240E00D40CD7454F714&Cpt=0&posCptSel=1"
+					} , {
+						"desc": "CARTE PREMIER",
+						"hasParent": false,
+						"accountNum": "4561 00XX XXXX 3071",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "PCC",
+						"id": "CB0",
+						"accountDate": "",
+						"balance": "-1 631,28",
+						"drCr": true,
+						"sessionParam": "sessionid=C15D654D786BD337A09B9C25C3916A3D53C34BA72507F4E6&Cb=0"
+					} , {
+						"desc": "LIVRET A",
+						"hasParent": false,
+						"accountNum": "00290324786.EUR",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "OTH",
+						"id": "EP0",
+						"accountDate": "",
+						"balance": "3 099,21",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD337E023A39FE9F4F6885E28F906884E9F4E&Epa=0"
+					}, {
+						"desc": "LDD",
+						"hasParent": false,
+						"accountNum": "00296010496.EUR",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "OTH",
+						"id": "EP1",
+						"accountDate": "",
+						"balance": "1 024,29",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD3377896ED3B16C52CE90FF42DDC0EDF3CD5&Epa=1"
+					} , {
+						"desc": "PTF INVEST EMP ",
+						"hasParent": false,
+						"accountNum": "00297551503.EUR",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "INV",
+						"id": "TITRE0",
+						"accountDate": "",
+						"balance": "2 883,59",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD33772D8F8E13A9FD9308D39FA195D1E1B0E"
+					} , {
+						"desc": "PRET IMMOBILIER",
+						"hasParent": false,
+						"accountNum": "FRHBFR029259561611",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "INS",
+						"id": "CRED0",
+						"accountDate": "",
+						"balance": "128 863,67",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD3378F9ABABB4E992830EE7BBE98C8799152&Crd=0"
+					}, {
+						"desc": "PRET IMMOBILIER",
+						"hasParent": false,
+						"accountNum": "FRHBFR029259561612",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "INS",
+						"id": "CRED1",
+						"accountDate": "",
+						"balance": "23 371,96",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD337F0065A89EA8DE801E9742C1F2362CDA2&Crd=1"
+					}, {
+						"desc": "PRET IMMOBILIER",
+						"hasParent": false,
+						"accountNum": "FRHBFR029259561613",
+						"ccy": {
+							"desc": "EUR",
+							"code": "EUR"
+						},
+						"type": "INS",
+						"id": "CRED2",
+						"accountDate": "",
+						"balance": "116 363,73",
+						"drCr": false,
+						"sessionParam": "sessionid=C15D654D786BD337855389D3FE4AEBAD9F1A915A75E2AEAB&Crd=2"
+					}
+				]
+			}]
+		}]
+	},
+	"header": {
+		"version": "1.1",
+		"token": "0.978857826450252",
+		"errorMsg": [],
+		"statusCode": "0000"
+	}
+}

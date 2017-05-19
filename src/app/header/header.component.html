@@ -1,0 +1,31 @@
+<div class="header">
+
+    <div class="row">
+        <div class="pull-right">
+           
+            <label>
+                <span class="header-subtitle">{{ 'HEADER.SELECT' | translate }}</span>
+                <select #langSelect (change)="translate.use(langSelect.value)">
+                <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                </select>
+            </label>
+
+            <button type="button" class="header_button btn btn-default btn-sm" (click)="logout()">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;{{ 'HEADER.LOGOUT' | translate }}
+            </button>
+        </div>
+        <div class="pull-left">
+             <img class="header-subtitle-img grow" src="assets/img/puce_ma_banque_new.jpg" alt="M">
+             <span class="header-subtitle">{{ 'HEADER.TITLE' | translate }}</span>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="app-navbar">
+            <app-navbar></app-navbar>
+        </div>
+
+    </div>
+</div>
+

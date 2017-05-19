@@ -1,0 +1,131 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: HBFR PIB APIs
+host: client.hsbc.fr
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /client.hsbc.fr/cgi-bin/balances:
+    get:
+      description: This API will return balances data for the connected Customer
+      produces: 
+        - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BalancesDefinition'
+
+definitions:
+  ErrorMessage:
+    title: Headers Metadata
+    type: object
+    properties:
+      code:
+        description: code 
+        type: string
+      desc:
+        description: locale message
+        type: string
+  Header:
+    title: Header Metadata
+    type: object
+    properties:
+      token:
+        type: string
+      version:
+        type: string
+      statusCode:
+        type: string
+      errMsg:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessage'
+    
+  BalancesDefinition:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/Header'
+      body:
+        $ref: '#/definitions/BalancesData'
+        
+  BalancesData:
+    title: Balances Data
+    type: object
+    properties:
+      entities:
+        description: Entities list
+        type: array
+        items:
+          description: Account list
+          type: object
+          properties:
+            newMsgNumber:
+              description: TODO
+              type: string
+            accountGroups:
+              description: Account list
+              type: array
+              items:
+                description: Acounts
+                type: object
+                properties:
+                  accounts:
+                    type: array
+                    items:
+                      description: Account
+                      type: object
+                      properties:
+                        desc:
+                          description: Account name
+                          type: string
+                        hasParent:
+                          description: not used in France
+                          type: boolean
+                        accountNum:
+                          description: Account Number.currency
+                          type: string
+                        ccy:
+                          description: Currencies
+                          type: object
+                          properties:
+                            desc:
+                              description: Currency description
+                              type: string
+                            code:
+                              description: Currency code
+                              type: string
+                        type:
+                          description: type of account
+                          type: string
+                          enum:
+                            - DD
+                            - OTH
+                            - LWI
+                            - INS
+                            - INV
+                            - PCC
+                            - OTH
+                        id:
+                          description: account id (not used for mobile)
+                          type: string
+                        accountDate:
+                          description: date is always current one
+                          type: string
+                        balance:
+                          description: balance of the account
+                          type: string
+                        drCr:
+                          description: not used
+                          type: boolean
+                        sessionParam:
+                          description: sessionParam to use to call the account transactions
+                          type: boolean

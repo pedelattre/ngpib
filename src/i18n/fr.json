@@ -1,0 +1,58 @@
+{
+  "HEADER": {
+    "TITLE": "HSBC France, votre banque en ligne",
+    "SELECT": "Changer la langue",
+    "LOGOUT": "Quitter"
+  },
+  "MAIN": {
+    "MESS1": "Vous êtes connecté(e) de façon sécurisée à votre banque en ligne.",
+    "HELP": "Aide",
+    "PRINT": "Imprimer",
+    "WELCOME": "Bienvenue",
+    "LAST_CONN": "Dernière connexion le {{value1}} à {{value2}}.",
+    "DSP_ALERT": "Montrer l'alerte",
+    "HID_ALERT": "Masquer l'alerte"
+  },
+  "FOOTER" : {
+    "CONTACT_US" : "Contactez-nous",
+    "BRANCH_LOCATOR": "Où trouver HSBC ?",
+    "WHOAREWE" : "Qui sommes-nous ?",
+    "SECURITY" : "Sécurité",
+    "LEGAL" : "Mentions légales",
+    "PRICING" : "Nos tarifs",
+    "HELP" : "Aide",
+    "MIF" : "MIF",
+    "COPYRIGHT" : "Copyright HSBC France {{currentYear}}. Tous droits réservés."
+  },
+  "NAVBAR": {
+    "DASHBOARD" : "Ma synthèse",
+    "PRODUCTS" : "Mes produits",
+    "SHORTCUTS" : "Mes raccourcis",
+    "TRANSFERTS" : "Mes virements",
+    "SAVINGS" : "Mon épargne",
+    "LOANS" : "Mes prêts",
+    "WEALTH" : "Mes placements",
+    "PROFILE" : "Mon profile",
+    "DETAILS" : "Mes informations",
+    "SECURITY" : "Ma sécurité",
+    "ALERTS" : "Mes notifications",
+    "HELP" : "Aide",
+    "SEARCH" : "Rechercher",
+    "HISTO" : "Historique des transactions"
+  },
+  "HISTO" : {
+    "TITLE" : "Historique de vos transactions",
+      "TYPE" : "Type",
+      "DATE" : "Date",
+      "DETAILS" : "Description",
+      "CREDIT_AMOUNT": "Crédit",
+      "DEBIT_AMOUNT": "Débit"
+  },
+  "LOGIN" : {
+    "TITLE" : "Connexion",
+    "NAME" : "Mon identifiant",
+    "PASSWORD" : "Mon mot de passe",
+    "ACTION" : "Je me connecte"
+  }
+  
+}

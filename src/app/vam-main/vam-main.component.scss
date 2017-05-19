@@ -1,0 +1,49 @@
+.vam-main {
+    visibility: visible;
+    border: 4px solid lightsteelblue;
+    background-color: rgb(240, 240, 250);
+    width: 100%;
+}
+
+.vam-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vam-icon {
+    position: relative;
+    display: block;
+    width: 64px;
+    height: 64px;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+.vam-title {
+    font-size: large;
+}
+
+.closing-cross {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+    top: 0;
+    float: right;
+    cursor: pointer;
+    margin: 0;
+}
+
+.vam-button {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+    float: right;
+    cursor: pointer;
+    margin: 0;
+}

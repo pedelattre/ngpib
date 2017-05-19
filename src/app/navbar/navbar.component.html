@@ -1,0 +1,62 @@
+<nav class="app-navbar navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="http://www.hsbc.fr">
+                <img class="header-logo grow" src="assets/img/logo_NL.gif" alt="HSBC">
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active">
+                    <a routerLink="dashboard">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;{{ 'NAVBAR.DASHBOARD' | translate }}<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="products">
+                        <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>&nbsp;{{ 'NAVBAR.PRODUCTS' | translate }}</a>
+                </li>
+                <li class="dropdown" routerLinkActive="active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'NAVBAR.SHORTCUTS' | translate }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li routerLinkActive="active"><a routerLink="histo">{{ 'NAVBAR.HISTO' | translate }}</a></li>
+                        <li routerLinkActive="active"><a routerLink="transfert">{{ 'NAVBAR.TRANSFERTS' | translate }}</a></li>
+                        <li routerLinkActive="active"><a routerLink="placement">{{ 'NAVBAR.SAVINGS' | translate }}</a></li>
+                        <li routerLinkActive="active"><a routerLink="loans">{{ 'NAVBAR.LOANS' | translate }}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li routerLinkActive="active"><a routerLink="wealth">{{ 'NAVBAR.WEALTH' | translate }}</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" routerLinkActive="active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;{{ 'NAVBAR.PROFILE' | translate }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li routerLinkActive="active"><a routerLink="profile">{{ 'NAVBAR.DETAILS' | translate }}</a></li>
+                        <li routerLinkActive="active"><a routerLink="security">{{ 'NAVBAR.SECURITY' | translate }}</a></li>
+                        <li routerLinkActive="active"><a routerLink="messages">{{ 'NAVBAR.ALERTS' | translate }}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li routerLinkActive="active"><a routerLink="help">{{ 'NAVBAR.HELP' | translate }}</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="{{ 'NAVBAR.SEARCH' | translate }}">
+                </div>
+                <button type="submit" class="btn btn-default grow">OK</button>
+            </form>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>

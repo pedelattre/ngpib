@@ -8,7 +8,10 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
+        "app/data",
         "assets",
+        "i18n",
+        "app/data",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -19,9 +22,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
