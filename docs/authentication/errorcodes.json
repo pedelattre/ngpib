@@ -1,0 +1,17 @@
+[
+    { "code": "C001", "desc": "GSM session invalid, Multiple Logon" },
+    { "code": "C003", "desc": "Stepup required" },
+    { "code": "S003", "desc": "Mobile Link(within same entity ID)" },
+    { "code": "C004", "desc": "Need to accept T&C during logon" },
+    { "code": "C005", "desc": "Hard token activation – end of  grace period" },
+    { "code": "C007", "desc": "Hard token activation – within  grace period" },
+    { "code": "C008", "desc": "Soft token activation – end of  grace period" },
+    { "code": "C009", "desc": "Soft token activation – within grace period" },
+    { "code": "C013", "desc": "OLR not setup" },
+    { "code": "C015", "desc": "SAAS Phase migration (After cam10Auth)" },
+    { "code": "S001", "desc": "Credential migration" },
+    { "code": "S002", "desc": "Token Choice" },
+    { "code": "R001", "desc": "Soft token order – end of grace period" },
+    { "code": "R002", "desc": "Soft token order – within grace period" },
+    { "code": "C012", "desc": "Insufficient credential" }
+]

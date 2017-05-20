@@ -4,11 +4,12 @@
   "description": "",
   "main": "SOUSCRIPTION_NOMINAL_SaaS.js",
   "dependencies": {
+    "async": "^2.4.0",
     "express": "^4.14.0",
-    "request-promise": "^3.0.0",
-    "request-debug": "^0.2.0"
+    "request-debug": "^0.2.0",
+    "request-promise": "^3.0.0"
   },
-  "engines" :  {
+  "engines": {
     "node": "5.10.1"
   },
   "devDependencies": {},

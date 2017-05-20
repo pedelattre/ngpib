@@ -1,7 +1,7 @@
 'use strict';
 var request = require('request-promise');
 // allows to trace each request and redirect on the console
-// require('request-debug')(request);
+require('request-debug')(request);
 
 var r = request
     .defaults({
@@ -12,6 +12,8 @@ var r = request
         //'proxy':'http://$pplsoft$:$password$@uk-proxy-01.systems.uk.hsbc' // if required to exit corporate network
     });
 
+// Global Vars 
+// ----------------------------------------------------------------------
 // const sdehost = 'www.eu532.p2g.netd2.hk.hsbc';
 const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
 var user = {
@@ -23,8 +25,9 @@ var user = {
     rccDigits: []
 };
 var queryingSouscription = false;
-
 var locale = 'fr';
+
+// First Post to Authentication (user id is verified)
 r.post('https://' + sdehost + '/1/2/',
     {
         form: {
@@ -38,17 +41,25 @@ r.post('https://' + sdehost + '/1/2/',
             __locale: locale
         }
     }
+// First Response from the Authentication layer, 
+// get back the RCC pattern sent back by the server
 ).then(function (args) {
     console.log("CAM10 response ", JSON.stringify(args,null,'  '));
     if (args.header && args.header.statusCode  && '0000' != args.header.statusCode) {
         console.log("status != 0000 ");
     }
     user.rccDigits = args.body.rccDigits.split(',').map(function (c) {return parseInt(c) });
+    //
+    // Next step
     return r.get('https://' + sdehost + '/1/2/authentication/TEST_MOBILE_CAM30');
+//
+// Then wait for previous GET on TEST_MOBILE_CAM30
 }).then(function(args) {
     console.log(args);
     var rccPassword = user.rccDigits.map(function (d) {return user.password.charAt(d-1);}).join('');
     console.log('authenticating rccPassword=', rccPassword, 'memAnswer=',user.memorableAnswer);
+    //
+    // Next step : the Authentication is POST based on userid, memorableAnswer and rccPassword
     return r.post('https://'+sdehost+'/1/2/',
         {
             form: {
@@ -62,6 +73,7 @@ r.post('https://' + sdehost + '/1/2/',
             }
         }
     );
+// Then wait for the CAM30 response
 }).then(function(reply) {
     console.log("CAM30 response ", JSON.stringify(reply,null,'  '));
     if (reply.header && reply.header.statusCode  && 'C005' == reply.header.statusCode) {
