@@ -4,16 +4,16 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import {Customer} from './models/Customer';
-import {Transaction} from './models/Transaction';
-import {Balance} from './models/Balance';
+import {Customer} from '../_models/Customer';
+import {Transaction} from '../_models/Transaction';
+import {Balance} from '../_models/Balance';
 
-import { CUSTOMERS_URL } from './config';
+import { CUSTOMERS_URL } from '../config';
 
 // Mock objects
-import {TRANSACTIONS} from './data/transactions';
-import {CUSTOMER} from './data/customer';
-import {BALANCE_CC, BALANCE_PP, BALANCE_LN} from './data/balances';
+import {TRANSACTIONS} from '../_data/transactions';
+import {CUSTOMER} from '../_data/customer';
+import {BALANCE_CC, BALANCE_PP, BALANCE_LN} from '../_data/balances';
 
 @Injectable()
 export class CustomerService {
@@ -40,31 +40,12 @@ export class CustomerService {
   getCustomers
   */
   getCustomers(): Observable<Customer[]> {
-    return this.http.get(CUSTOMERS_URL)
-      .map((res: Response)  => res.json().data)
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    return this.http
+                .get(CUSTOMERS_URL)
+                .map((res: Response)  => res.json().data)
+                .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 
   }
-
-
-  /*
-  getTransactions
-  */
-  // getTransactions(userId : String, accountNumber : String) : Transaction[] {
-  //   let transactions : Transaction[];
-
-  //   console.debug('Getting transactions of customer : ' + userId + ' for account ' + accountNumber);
-
-  //   if (userId !== '' && accountNumber !== '') {
-  //     transactions = TRANSACTIONS;
-  //   };
-
-  //   return transactions;
-  // }
-
-  /*
-  getCurrentCustomer
-  */
 
   getCurrentCustomer() : Customer {
     console.debug('Getting current customer.');

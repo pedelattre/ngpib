@@ -1,7 +1,0 @@
-export class Balance {
-  accountNumber: String;
-  accountName: String;
-  accountType: String;
-  amount: Number;
-  valueDate: Date;
-}

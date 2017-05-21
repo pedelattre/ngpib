@@ -7,11 +7,10 @@
           <a routerLink="/help">{{ 'MAIN.HELP' | translate }}</a>
           &nbsp;|&nbsp;
           <a (click)="print">{{ 'MAIN.PRINT' | translate }}</a>
-          </span>
-            <alert type="warning" *ngIf="alertIsVisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, officiis quod voluptatum labore non. Voluptate eveniet maxime commodi vero totam, fuga sed autem omnis cupiditate cum facilis rem adipisci, corrupti, enim dolorem at quis nemo odit
-                non consequuntur sint alias harum! Animi veritatis repellat dignissimos minima perferendis rerum! Aliquam dicta hic illum, et quisquam. Illum omnis necessitatibus adipisci perferendis fugiat, cum recusandae, facere pariatur.</alert>
-            <button class="button button-std" (click)="toggleAlert()">{{displayAlertMessage}}</button>
-        </article>
+        </span></article>
+           
+        <app-information></app-information>
+        
     </div>
     <div class="container-fluid row greatings">
         <article>
@@ -21,17 +20,14 @@
             <hr/>
         </article>
     </div>
+
     <article>
         <app-vam-main></app-vam-main>
     </article>
+    
     <div class="container-fluid row">
         <section>
-            <!--<div class="col-md-2">
-                <app-branch-locator></app-branch-locator>
-              </div>-->
-            <div class="col-md-11">
-                <app-balance-list></app-balance-list>
-            </div>
+            <app-balance-list></app-balance-list>
         </section>
         <aside>
             <div class="col-md-1">

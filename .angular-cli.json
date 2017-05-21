@@ -8,10 +8,9 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "app/data",
         "assets",
         "i18n",
-        "app/data",
+        "app/_data",
         "favicon.ico"
       ],
       "index": "index.html",

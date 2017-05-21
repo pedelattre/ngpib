@@ -1,0 +1,74 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
+  <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+      <label for="username">{{ 'LOGIN.NAME' | translate }}</label>
+      <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+      <div *ngIf="f.submitted && !username.valid" class="help-block">{{ 'LOGIN.NAME.INVALID' | translate }}</div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !memQuestionResponse.valid }">
+
+      <label for="memQuestionResponse">{{ 'LOGIN.MEMQUESTION' | translate }}<i>{{model.memorableQuestion}}</i></label>
+      <input type="password" class="form-control" name="memQuestionResponse" [(ngModel)]="model.memQuestionResponse" #memQuestionResponse="ngModel"
+        required />
+      <div *ngIf="f.submitted && !memQuestionResponse.valid" class="help-block">{{ 'LOGIN.ANSWER.INVALID' | translate }}</div>
+
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+      <label for="password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+        <!--input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required /-->
+
+        <div class="form-inline">
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter1" [(ngModel)]="model.passLetter1" #password="ngModel" readonly />
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter2" [(ngModel)]="model.passLetter2" #password="ngModel" readonly />
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter3" [(ngModel)]="model.passLetter3" #password="ngModel"/>
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter4" [(ngModel)]="model.passLetter4" #password="ngModel"/>
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter5" [(ngModel)]="model.passLetter5" #password="ngModel"/>
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter6" [(ngModel)]="model.passLetter6" #password="ngModel"/>
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter7" [(ngModel)]="model.passLetter7" #password="ngModel"/>
+          <input style="width: 36px" placeholder="*" type="password" maxlength="1" class="form-control" name="passLetter8" [(ngModel)]="model.passLetter8" #password="ngModel"/>
+      </div>
+      <div *ngIf="f.submitted && !password.valid" class="help-block">{{ 'LOGIN.PASSWORD.INVALID' | translate }}</div>
+    </div>
+
+    <div class="form-group">
+      <button *ngIf="f.form.valid" [disabled]="loading" class="btn btn-primary">{{ 'LOGIN.ACTION' | translate }}</button>
+
+      <!--<a [routerLink]="['/register']" class="btn btn-link">Register</a>-->
+    </div>
+  </form>
+</div>
+
+
+<!--script type="text/javascript">
+
+	function changeFocus(current_elem,next_elem, keyboardEvent){
+        if (keyboardEvent && keyboardEvent.keyCode && keyboardEvent.keyCode == 9) {
+            // tab pressed : don't interfere with focus
+        } else  if (document.forms[0].elements[current_elem].value.length==1){
+    		document.forms[0].elements[next_elem].focus()
+		}
+	} 
+
+</script-->
+
+<!--div class="csLabel">
+
+    <input name="keyrcc_password_first11" type="password" id="keyrcc_password_first11" value="" size="1" maxlength="1" disabled="disabled" class="csTextField csDisabled">
+    <input name="keyrcc_password_first1" type="password" id="keyrcc_password_first1" size="1" maxlength="1" tabindex="1" class="csTextField" onkeyup="changeFocus('keyrcc_password_first1','keyrcc_password_first2', event)">
+    <input name="keyrcc_password_first13" type="password" id="keyrcc_password_first13" value="" size="1" maxlength="1" disabled="disabled" class="csTextField csDisabled">
+    <input name="keyrcc_password_first2" type="password" id="keyrcc_password_first2" size="1" maxlength="1" tabindex="1" class="csTextField" onkeyup="changeFocus('keyrcc_password_first2','keyrcc_password_first3', event)">
+    <input name="keyrcc_password_first15" type="password" id="keyrcc_password_first15" value="" size="1" maxlength="1" disabled="disabled" class="csTextField csDisabled">
+    <input name="keyrcc_password_first3" type="password" id="keyrcc_password_first3" size="1" maxlength="1" tabindex="1" class="csTextField">
+    <span class="threeDots">...</span>
+    <input name="keyrcc_password_first27" type="password" id="keyrcc_password_first27" value="" size="1" maxlength="1" disabled="disabled" class="csTextField csDisabled">
+    <input name="keyrcc_password_first28" type="password" id="keyrcc_password_first28" value="" size="1" maxlength="1" disabled="disabled" class="csTextField csDisabled">
+
+    <img src="info.png" alt="" title="This is the 8 to 30 characters password defined when chosing your HSBC Secure Key.">
+
+  <input name="password" type="hidden" id="password" size="3" maxlength="3">
+</div-->
+

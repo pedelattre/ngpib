@@ -1,38 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import {Router}  from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../_services/authentication.service';
+import {SharedModule} from '../shared/shared.module';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
-})
+    selector: 'app-login',
+    templateUrl: 'login.component.html',
+    styleUrls: ['./login.component.scss']})
 export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
-    returnUrl: string;
- 
+    error = '';
+
     constructor(
-        private router: Router) { }
- 
+        private router: Router,
+        private authenticationService: AuthenticationService) { }
+
     ngOnInit() {
         // reset login status
-        // this.authenticationService.logout();
- 
-        // get return url from route parameters or default to '/'
-        // this.returnUrl = this.router.snapshot.queryParams['returnUrl'] || '/';
+        this.authenticationService.logout();
     }
- 
+
     login() {
-      this.router.navigate(['/dashboard']);
-        // this.loading = true;
-        // this.authenticationService.login(this.model.username, this.model.password)
-        //     .subscribe(
-        //         data => {
-        //             this.router.navigate([this.returnUrl]);
-        //         },
-        //         error => {
-        //             this.alertService.error(error);
-        //             this.loading = false;
-        //         });
+        this.loading = true;
+        this.authenticationService.login(this.model.username, this.model.password)
+            .subscribe(result => {
+                if (result === true) {
+                    // login successful
+                    this.router.navigate(['/dashboard']);
+                } else {
+                    // login failed
+                    this.error = 'Username or password is incorrect';
+                    this.loading = false;
+                }
+            });
     }
 }

@@ -1,4 +1,7 @@
 {
+  "HOME": {
+        "HELLO": "hello {{value}}"
+    },
   "HEADER": {
     "TITLE": "HSBC France, your online banking",
     "SELECT": "Change language",
@@ -12,7 +15,7 @@
     "LAST_CONN": "Your last connection was on {{value1}} at {{value2}}.",
     "DSP_ALERT": "Display alert",
     "HID_ALERT": "Hide alert"
-  },
+  },  
   "FOOTER" : {
     "CONTACT_US" : "Contact us",
     "BRANCH_LOCATOR": "Where find HSBC ?",
@@ -51,7 +54,12 @@
   "LOGIN" : {
     "TITLE" : "Login",
     "NAME" : "My identifier",
+    "NAME.INVALID": "Your name is not valid",
     "PASSWORD" : "My password",
+    "PASSWORD.INVALID": "Your password is not valid",
+    "MEMQUESTION" : "Your answer to the question :",
+    "ANSWER" : "Your answer",
+    "ANSWER.INVALID": "Your answer is not valid",
     "ACTION" : "I'm connecting"
   }
 }

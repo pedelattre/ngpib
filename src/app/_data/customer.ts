@@ -1,4 +1,4 @@
-import { Customer } from '../models/Customer';
+import { Customer } from '../_models/Customer';
 export const CUSTOMER: Customer = {
     'customerId' : 'HBFR01234567890',
     'firstName' : 'ROBERT',

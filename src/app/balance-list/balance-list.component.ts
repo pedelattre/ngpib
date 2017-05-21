@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {SharedModule} from '../shared/shared.module';
+import {TranslateService} from '@ngx-translate/core';
 
-import { Transaction } from 'app/models/Transaction';
-import { Balance } from 'app/models/Balance';
-import { Customer } from 'app/models/Customer';
+import { Transaction } from 'app/_models/Transaction';
+import { Balance } from 'app/_models/Balance';
+import { Customer } from 'app/_models/Customer';
 
-
-import { TranslateService } from 'ng2-translate';
-import { CustomerService } from '../customer.service';
+import { CustomerService } from '../_services/customer.service';
 
 @Component({
   selector: 'app-balance-list',
@@ -16,7 +16,7 @@ import { CustomerService } from '../customer.service';
 })
 export class BalanceListComponent implements OnInit {
  currentCustomer: Customer;
- loadingIndicator: boolean = true;
+ loadingIndicator = true;
 
 //  columns = [
 //     { name: 'Compte' },
@@ -37,7 +37,7 @@ export class BalanceListComponent implements OnInit {
 
   getHisto(balance: Balance) {
     console.log(balance);
-     let balanceId = balance ? balance.accountId : null;
+     const balanceId = balance ? balance.accountId : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
     // Include a junk 'foo' property for fun.
@@ -63,9 +63,9 @@ export class BalanceListComponent implements OnInit {
     //       solde: 5643.21,
     //       devise: 'EUR'
     // }];
-// 
+//
     // this.loadingIndicator = false;
-    
+
   }
 
 }

@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-import {Router}  from '@angular/router';
-import {TranslateService} from 'ng2-translate';
+import {Router} from '@angular/router';
+import {SharedModule} from '../shared/shared.module';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-header', 
-  templateUrl: './header.component.html', 
+  selector: 'app-header',
+  templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']})
 export class HeaderComponent {
   // title = 'Youhou';

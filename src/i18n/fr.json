@@ -1,4 +1,7 @@
 {
+  "HOME": {
+        "HELLO": "Bonjour {{value}} !"
+    },
   "HEADER": {
     "TITLE": "HSBC France, votre banque en ligne",
     "SELECT": "Changer la langue",
@@ -51,8 +54,11 @@
   "LOGIN" : {
     "TITLE" : "Connexion",
     "NAME" : "Mon identifiant",
+    "NAME.INVALID": "Votre identifiant n'est pas valide",
     "PASSWORD" : "Mon mot de passe",
+    "PASSWORD.INVALID": "Votre mot de passe est invalide",
+    "MEMQUESTION" : "Votre réponse à votre question mémorable :",
+    "ANSWER.INVALID": "Votre réponse est invalide",
     "ACTION" : "Je me connecte"
   }
-  
 }

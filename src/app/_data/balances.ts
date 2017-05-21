@@ -1,4 +1,4 @@
-import { Balance } from '../models/Balance';
+import { Balance } from '../_models/Balance';
 export const BALANCE_CC: Balance[] = [{
       accountId: '1',
       accountNumber: 'HBFR0909090909090',

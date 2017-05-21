@@ -4,9 +4,9 @@ import { TestBed, async, inject } from '@angular/core/testing';
 import { Http, BaseRequestOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { CustomerService } from './customer.service';
-import { Customer } from './models/Customer';
+import { Customer } from '../_models/Customer';
 
-import { CUSTOMERS_URL } from './config';
+import { CUSTOMERS_URL } from '../config';
 
 
 describe('CustomerService', () => {
