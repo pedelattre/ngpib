@@ -29,7 +29,7 @@ const appRoutes: Routes = [
         redirectTo: 'login',
         pathMatch: 'full'
     },
-    { path: '**', component: PageNotFoundComponent },
+    { path: '**', component: PageNotFoundComponent, canActivate: [ AuthGuard ] },
     // otherwise redirect to home
     // { path: '**', redirectTo: '' }
 ];
