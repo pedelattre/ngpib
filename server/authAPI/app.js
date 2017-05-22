@@ -12,10 +12,11 @@ var passport = require('passport'),
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var Model = require('./models/models.js');
+var Models = require('./models/models.js');
+var User = Models.User;
+
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -34,30 +35,32 @@ app.use(require('express-session')({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    Model.User.findOne({
-      where: {
-        'username': username
-      }
-    }).then(function (user) {
-      if (user == null) {
-        return done(null, false, { message: 'Incorrect credentials.' })
-      }
-      var hashedPassword = bcrypt.hashSync(password, user.salt)       
-      if (user.password === hashedPassword) {
-        return done(null, user)
-      }
-        
-      return done(null, false, { message: 'Incorrect credentials.' })
-    })
-  }
-))
-
 // Routing
 app.use('/', index);
 app.use('/users', users);
+
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
+
+// Routing for login
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true })
+);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

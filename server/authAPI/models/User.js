@@ -33,8 +33,5 @@ var options = {
   freezeTableName: true
 }
 
-const User = sequelize.define('users', attributes, options);
-
-module.exports.User = User;
 module.exports.attributes = attributes
 module.exports.options = options
