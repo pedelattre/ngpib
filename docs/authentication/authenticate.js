@@ -23,8 +23,8 @@ var user = {
     //id: '02100157235', // Business card only holder
     id: '00430011591', // standard user
     // id: '01724387351', // private bank user
-    password: 'carambar',
-    memorableAnswer: 'chomeur',
+    password: '',
+    memorableAnswer: '',
     rccDigits: []
 };
 var locale = 'fr';

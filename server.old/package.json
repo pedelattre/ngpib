@@ -1,0 +1,18 @@
+{
+  "name": "authServerLite",
+  "version": "1.0.0",
+  "description": "An Express4, passport authentication server usins SQLLite",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "connect-sqlite": "^0.0.1",
+    "cookie-parser": "^1.4.3",
+    "crypto": "^0.0.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "sqlite3": "^3.1.8"
+  }
+}
