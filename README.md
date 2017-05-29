@@ -13,7 +13,9 @@ __This is only a POC project__
 
 ## Fun stuffs
 
+### Mocking authentication
 NodeJs is used locally if devloppers want to mock Authentication but it's not the real and final mecanism.
+If you want to switch authentication off go to app.routing.ts and comment ```canActivate: [ AuthGuard ]``` before restarting the app.
 
 ## Docker
 
@@ -23,6 +25,8 @@ Ref [https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html]
 ```
 docker run --rm trion/ng-cli ng -v
 ```
+
+
 
 ## AngularCLI specifics : 
 
