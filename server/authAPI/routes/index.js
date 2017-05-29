@@ -24,6 +24,10 @@ router.post('/register', function(req, res) {
     });
 });
 
+router.get('/api/authenticate', function(req, res) {
+    
+})
+
 router.get('/login', function(req, res) {
     res.render('login', { user : req.user });
 });
