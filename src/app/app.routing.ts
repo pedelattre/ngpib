@@ -17,8 +17,8 @@ const appRoutes: Routes = [
     { path: 'logout', component: LogoutComponent },
     { path: 'help', component: HelpComponent },
     { path: '', component: HomeComponent, canActivate: [ AuthGuard ] },
-    { path: 'dashboard', component: MainComponent, canActivate: [ AuthGuard ]  },
-    { path: 'histo', component: TransactionListComponent, canActivate: [ AuthGuard ]  },
+    { path: 'dashboard', component: MainComponent, canActivate: [ AuthGuard ] },
+    { path: 'histo', component: TransactionListComponent, canActivate: [ AuthGuard ] },
     // { path: 'hero/:id',      component: HeroDetailComponent },
     // {
     //   path: 'heroes',

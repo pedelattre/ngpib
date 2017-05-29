@@ -3,35 +3,13 @@
 }
 
 .main-container {
-    // padding-left: 10px;
-    // padding-right: 10px;
+
 }
 
 .main-top {
-    // display:block;
-    // top: 0;
-    // width: 100%;
+
 }
 
 .help {
     float: right;
 }
-
-// .greatings {
-//     /*border:1px solid black;*/
-//     top: 0;
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     border-bottom: 3px solid lightgray;
-// }
-// .greatings h1 {
-//     position: relative;
-//     display:block;
-//     margin:4px;
-// }
-// .last-connection {
-//     margin-left: auto;
-//     flex: 0 1 auto; /* Default */
-// }

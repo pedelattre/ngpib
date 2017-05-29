@@ -5,7 +5,7 @@ import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-vam-main',
   templateUrl: './vam-main.component.html',
-  styleUrls: ['./vam-main.component.scss']
+  styleUrls: ['./vam-main.component.css']
 })
 export class VamMainComponent implements OnInit {
 

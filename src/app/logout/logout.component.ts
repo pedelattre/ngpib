@@ -5,7 +5,7 @@ import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.scss']
+  styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent implements OnInit {
 

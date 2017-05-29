@@ -5,7 +5,7 @@ import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-contact-bar',
   templateUrl: './contact-bar.component.html',
-  styleUrls: ['./contact-bar.component.scss']
+  styleUrls: ['./contact-bar.component.css']
 })
 export class ContactBarComponent implements OnInit {
   items = [];

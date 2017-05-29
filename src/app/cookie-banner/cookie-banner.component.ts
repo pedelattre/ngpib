@@ -5,7 +5,7 @@ import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-cookie-banner',
   templateUrl: './cookie-banner.component.html',
-  styleUrls: ['./cookie-banner.component.scss']
+  styleUrls: ['./cookie-banner.component.css']
 })
 export class CookieBannerComponent implements OnInit {
 

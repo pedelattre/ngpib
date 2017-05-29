@@ -12,7 +12,7 @@ import { CustomerService } from '../_services/customer.service';
 @Component({
   selector: 'app-balance-list',
   templateUrl: './balance-list.component.html',
-  styleUrls: ['./balance-list.component.scss']
+  styleUrls: ['./balance-list.component.css']
 })
 export class BalanceListComponent implements OnInit {
  currentCustomer: Customer;
