@@ -1,0 +1,15 @@
+./src/app/app.component.scss
+./src/app/balance-list/balance-list.component.scss
+./src/app/contact-bar/contact-bar.component.scss
+./src/app/cookie-banner/cookie-banner.component.scss
+./src/app/footer/footer.component.scss
+./src/app/header/header.component.scss
+./src/app/help/help.component.scss
+./src/app/home/home.component.scss
+./src/app/login/login.component.scss
+./src/app/logout/logout.component.scss
+./src/app/main/main.component.scss
+./src/app/navbar/navbar.component.scss
+./src/app/page-not-found/page-not-found.component.scss
+./src/app/transaction-list/transaction-list.component.scss
+./src/app/vam-main/vam-main.component.scss

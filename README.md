@@ -22,8 +22,21 @@ If you want to switch authentication off go to app.routing.ts and comment ```can
 A docker image is used to build locally or remotly (on AWS).
 Ref [https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html]
 
+The Source Dockerfile for docker image is located here : 
+$BASEDIR/docker/Dockerfile
+
+```
+cd docker
+docker build -t vincegy/angular-cli:version1.0 .
+````
+
+Use the docker image produced :
+
 ```
 docker run --rm trion/ng-cli ng -v
+
+docker run -it --rm -w /opt -v $(pwd):/opt -p 4200:4200 vincegy/angular-cli ng build
+
 ```
 
 
