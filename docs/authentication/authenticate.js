@@ -4,6 +4,49 @@ var request = require('request-promise');
 //require('request-debug')(request); // allows to trace each request and redirect on the console
 //var cheerio = require('cheerio');
 
+// ------------------------------------------------------------------------------------------
+// Customer PIB Session Global
+var menus = "";
+var params = "";
+var sessionPath = "";
+var icc = "";
+
+// Few functions ----------------------------------------------------------------------------
+function showError(errorTab) {
+    var tempErrorStr = "";
+    for(var i=0;i<errorTab.length;i++){
+        tempErrorStr += errorTab[i].desc;
+    } 
+    console.log(chalk.red(tempErrorStr));
+}
+
+function getAction(params, actionName) {
+    var action = "";
+    for (var i=0; i<params.length;i++) {
+            if (params[i]["serviceId"] === actionName) {
+                action = params[i].serviceParam;
+            }
+        }
+    return action;
+}
+
+var messages = {
+  "noService" : "Ma banque mobile est temporairement indisponible. Essayez à nouveau ultérieurement ou contactez-nous.",
+  "C000" : "It will forced you logoff",
+  "C001" : "Vous avez été inactif pendant un certain temps. Afin de protéger vos données, vous avez été automatiquement déconnecté. Merci de vous connecter à nouveau." ,
+  "C003" : "Cette étape est obligatoire.",
+  "C005" : "Vous devez enregistrer votre HSBC Secure Key Mobile pour accéder à cette fonctionnalité.<br/>Vous pouvez enregistrer votre HSBC Secure Key Mobile selon 2 façons:<br/>Vous pouvez utiliser l'activation en ligne après vous être connecté.<br/>Vous pouvez contacter le Centre de Relations Clients pour enregistrer votre HSBC Secure Key Mobile.<br/>Si vous n'avez pas reçu HSBC Secure Key 30 jours après votre choix, veuillez contacter rapidement le Centre de Relations Clients.",
+  "E000" : "Erreur de connexion. Merci d'essayer à nouveau ultérieurement.",
+  "P001" : "Nous avons rencontré un problème. Merci de vous connecter à nouveau.",
+  "P002" : "Nous avons rencontré un problème. Merci de vous connecter à nouveau.",
+  "P003" : "Le service n'est pas disponible. Merci d'essayer à nouveau ultérieurement.",
+  "P004" : "Une erreur est survenue lors de l'accès à Ma banque Mobile. Merci de vérifier votre connexion à internet ou de vous reconnecter plus tard.",
+  "jsonErr":"Ma banque mobile est temporairement indisponible. Merci de vous connecter à nouveau ou contactez-nous.",
+  "headerErr":"Ma banque mobile est temporairement indisponible. Merci de vous connecter à nouveau ou contactez-nous.",
+  "statusCodeErr":"Ma banque mobile est temporairement indisponible. Merci de vous connecter à nouveau ou contactez-nous."
+}
+
+// ------------------------------------------------------------------------------------------------------------------------
 // Configure request
 var r = request
     .defaults({
@@ -19,12 +62,16 @@ var r = request
 // ----------------------------------------------------------------------
 // const sdehost = 'www.eu532.p2g.netd2.hk.hsbc';
 const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
+const pibhost = 'client.oat2.hsbc.fr';
 var user = {
-    //id: '02100157235', // Business card only holder
-    id: '00430011591', // standard user
-    // id: '01724387351', // private bank user
-    password: '',
-    memorableAnswer: '',
+    //id: '02100157235', // Business card only holder (carambar, chomeur)
+    //id: '02930007827', // standard user (carambar, platini)
+    //id: '01724387351', // private bank user (carambar, chomeur)
+    //id: '01010097250', // Normal user (carambar, platini)
+    //id: '31564944768', // Normal user (carambar, platini)
+    id : '01020029276', // Normal user (carambar, platini)
+    password: 'carambar',
+    memorableAnswer: 'platini',
     rccDigits: []
 };
 var locale = 'fr';
@@ -52,9 +99,12 @@ r.post('https://' + sdehost + '/1/2/',
     console.log(chalk.blue("## CAM10 response ", JSON.stringify(reply,null,'  ')));
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.log(chalk.red("error status ", reply.header.statusCode));
-        return Promise.reject(reply);
+         showError(reply.header.errorMsg)
+         return Promise.reject(reply);
     }
     user.rccDigits = reply.body.rccDigits.split(',').map(function (c) {return parseInt(c) });
+    //
+    // Open Mobile Authentication
     return r.get('https://' + sdehost + '/1/2/authentication/TEST_MOBILE_CAM30');
     
 // _________________________________________________________________
@@ -63,10 +113,12 @@ r.post('https://' + sdehost + '/1/2/',
     console.info(chalk.blue("## CAM20 response ", JSON.stringify(reply,null,'  ')));
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.error(chalk.red("error status ", reply.header.statusCode));
-        return Promise.reject(reply);
+         showError(reply.header.errorMsg)
+         return Promise.reject(reply);
     }
     var rccPassword = user.rccDigits.map(function (d) {return user.password.charAt(d-1);}).join('');
     console.log(chalk.magenta('Authenticating rccPassword=', rccPassword, 'memAnswer=',user.memorableAnswer));
+    
     return r.post('https://'+sdehost+'/1/2/',
         {
             form: {
@@ -85,77 +137,120 @@ r.post('https://' + sdehost + '/1/2/',
 }).then(function(reply) {
     console.info(chalk.blue("## CAM30 response ", JSON.stringify(reply,null,'  ')));
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
-        console.error(chalk.red("error status ", reply.header.statusCode));
+        console.error(chalk.red("Serious error status ", reply.header.statusCode));
+        showError(reply.header.errorMsg)
         return Promise.reject(reply);
     }
     if (reply.header && reply.header.statusCode && 'C005' == reply.header.statusCode) {
-        console.log(chalk.green("Authentication successful, get localSSO "));
-        
-         // TODO : get the localSSO command
-        /*
-        return r.post("https://" + sdehost + "/1/3?idv_cmd=idv.Registration", {
-            form: {
-                // TODO : complete the form
-                // idv_OtpDefer: true
-            }
-        })
-        */
+        console.log(chalk.red("Authentication ERROR: HardToken command expired"));
+        showError(reply.header.errorMsg)
+        return Promise.reject(reply);
 
-    } else {
-        console.log(chalk.white.bgGreen.bold('authentication successful, not deferred'));
-        //return Promise.resolve(reply);
-        // return r.get('https://' + sdehost + '/1/3/testing-pages/souscription-lynxo');
-    }
-    // 
-    // Next : DECONNECTION 
-    return r.get('https://client.hsbc.fr/cgi-bin/emcgi');
-    //return r.get('https://' + sdehost + '/1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.rbwm.deconnexion');
-        
-       
+    } 
+    console.log(chalk.white.bgGreen.bold('Authentication SUCCESSFUL (not deferred)'));
+    
+    // Post to mobile-localsso command
+    return r.post("https://" + sdehost + "/1/3/authentication/mobile-localsso", {
+        form: {
+            "ver": "1.1",
+            "json": ""
+        }
+    }); 
 })
 // _________________________________________________________________
-// Then wait for the POST CAM30 response (getlocalSSO)
-/*
+// Then wait for the POST CAM30 response : get localSSO
+
 .then(function(reply) {
     console.log("POST CAM30 response ", JSON.stringify(reply, null, '  '));
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.log("error status ", reply.header.statusCode);
+        showError(reply.header.errorMsg)
         return Promise.reject(reply);
-    }
-    // 
-    // Next : DECONNECTION 
-    return r.get('https://' + sdehost + '1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.rbwm.deconnexion');
+    } 
+    
+    // get Customer information and localSSO
+    var customerInfo = reply.body;
+
+    /*
+    Typicall response : 
+    "statusMessage": "Last logon successful on",
+    "customerName": "LUGINA",
+    "ssoToken": "20093d9c44a289b2775c4cb63e5a0d9c1b6b6b2ac2712c102db52990c1d76188ef0ac41a3c57012527d80da4995ba2ed0b87e1faadc9981ddf3a5e474cece485b2a15e534e015bde616e764efa1d9b51d7a93910d29a3ef0e1f341359b4274df09cd6c843f5cbe50157c7eae7eba85b429b9810c8998f1f99e5ad3b4c9028202",
+    "lastLogonDate": "30/05/2017 17:52:39",
+    "isISFSupported": false,
+    "lastLogonStatus": true
+
+    */
+
+    // Next : entitlement WEBACC mob (parametre)
+    // https://client.hsbc.fr/cgi-bin/emmob%3FAppl%3DWEBACC
+    //"https://" + pibhost + "/cgi-bin/emmob%3FAppl%3DWEBACC"
+    return r.get("https://" + pibhost + "/cgi-bin/emmob?Appl=WEBACC&Mob="+customerInfo.ssoToken)
+
 })
-*/
 // _________________________________________________________________
-// Then wait for DECONNEXION response
+// Then wait the next response back from WEBACC
 .then(function(reply) {
-        console.info(chalk.blue("## DECONNEXION "));
-        //
-        // TODO : Find the good deconnexion URL
-        //
-        if (reply.match(/DOCTYPE html/)) {
-            console.log(chalk.green("Landed on DECONNEXION HTML page"));
-        }
-        /*
-        if ((!reply || !reply.header || ! reply.header.returnCode || reply.header.returnCode != 'OK')
-            || (!reply.token) ) {
-            console.error("error status ", reply.header.returnCode);
-            return Promise.reject(reply);
-        }
-        */
-        return Promise.resolve(reply);
-    }
+    console.log("Entitlement response ", JSON.stringify(reply, null, '  '));
+    if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
+        console.log("error status ", reply.header.statusCode);
+        showError(reply.header.errorMsg)
+        return Promise.reject(reply);
+    } 
+        
+        // Process data from entitlement and keep it 
+        menus = reply.body.serviceIds;
+        params = reply.body.serviceParams;
+        sessionPath = reply.body.sessionPath;
+        var balanceLink = getAction("balances");
+        
+        return r.post("https://" + pibhost + "/cgi-bin/emmob?Appl="+ sessionPath + "&Mob="+balanceLink, {
+            form: {
+                "global_view":"",
+                "locale":locale,
+                "ver":"1.1",
+                "json":"true"
+                }
+        });
+    })
+
+// _________________________________________________________________
+// Then wait the next response back (balances for instance)
+.then(function(reply) {
+    if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
+        console.log("error status ", reply.header.statusCode);
+        return Promise.reject(reply);
+    } 
+    // Process the response from entitlement
+    // TODO : do it lazy !
+    console.log(JSON.stringify(reply));
+
+    // CAll for logout
+    var logoffLink = getAction("logoff");
+    return r.post("https://" + pibhost + "/cgi-bin/emmob?Appl="+ sessionPath + "&" + logoffLink, {
+            form: {
+                "global_view":"",
+                "locale":locale,
+                "ver":"1.1",
+                "json":"true"
+                }
+        });
+
+    // Final    
+    //return Promise.resolve(reply);
+    })
 //
 // _________________________________________________________________
 // SAFETY NET
-).then(function(reply) {
-    console.info(chalk.green("FINAL Success"));
+.then(function(reply) {
+    console.log(chalk.green("FINAL Success"));
+    console.log(JSON.stringify(reply));
+})
 //
 // _________________________________________________________________
 // Catch on error (any)
-}).catch(function(reply) {
+.catch(function(reply) {
     if (reply) {
         console.error(chalk.red("ERROR : Unexpected error ", JSON.stringify(reply)));
     }
-});
+})
