@@ -17,7 +17,7 @@ __This is only a POC project__
 NodeJs is used locally if devloppers want to mock Authentication but it's not the real and final mecanism.
 If you want to switch authentication off go to app.routing.ts and comment ```canActivate: [ AuthGuard ]``` before restarting the app.
 
-## Docker
+## Docker container for building and running the app
 
 A docker image is used to build locally or remotly (on AWS).
 Ref [https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html]
@@ -28,18 +28,14 @@ $BASEDIR/docker/Dockerfile
 ```
 cd docker
 docker build -t vincegy/angular-cli:version1.0 .
-````
+```
 
-Use the docker image produced :
+Use docker for building  : (you need to be located in the app 'src' directory)
 
 ```
-docker run --rm trion/ng-cli ng -v
-
+cd src
 docker run -it --rm -w /opt -v $(pwd):/opt -p 4200:4200 vincegy/angular-cli ng build
-
 ```
-
-
 
 ## AngularCLI specifics : 
 

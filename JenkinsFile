@@ -1,0 +1,71 @@
+pipeline {
+    // Possible agent configurations - you must have one and only one at the top level.
+    agent any
+
+    environment {
+        BASEDIR = "${HOME}/Projects/ngpib"
+        ENV_NAME = "dev"
+        FE_TEST_SCRIPT = "WebTest.py"
+        PID_FILE - "pid.txt"
+    }
+
+    agent { label "master" }
+
+    stages {
+
+        stage('Preparation') {
+        sh '''
+            cd $BASEDIR
+            rm ${PID_FILE} 2>/dev/null
+        '''
+        }
+        stage('Requirements') {
+            sh '''
+            cd $BASEDIR
+            npm install
+            npm install -g @angular/cli:latest
+            '''
+        }
+        stage('Unit test') {
+            sh '''
+            cd $BASEDIR
+            ng test
+            '''
+        }
+        stage('E2E tests') {
+            sh '''
+            cd $BASEDIR
+            ng e2e
+            '''
+        }
+        stage('Build') {
+            sh '''
+            cd $BASEDIR
+            ng build
+            '''
+        }
+        stage('Run') {
+            sh '''
+            cd $BASEDIR/dist
+            ng serve & 
+            '''
+        }
+        stage('Tests scenario') {
+            sh '''
+            cd $BASEDIR
+            echo '###### Waiting 30sec '
+            sleep 30
+            ./chromedriver &
+            echo $! >> ${PID_FILE}
+            python ./$FE_TEST_SCRIPT
+            '''
+        }
+        stage('KillThemAll') {
+            sh '''
+            cd $BASEDIR
+            for PID in $(cat ${PID_FILE}); do kill $PID; done
+            rm ${PID_FILE} 2>/dev/null
+            '''
+        }
+    }
+}
