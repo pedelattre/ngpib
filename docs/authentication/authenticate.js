@@ -167,6 +167,9 @@ r.post('https://' + sdehost + '/1/2/',
         showError(reply.header.errorMsg)
         return Promise.reject(reply);
     } 
+
+    console.log(chalk.white.bgGreen.bold('Get LocalSSO OK'));
+    
     
     // get Customer information and localSSO
     var customerInfo = reply.body;
@@ -198,15 +201,17 @@ r.post('https://' + sdehost + '/1/2/',
         return Promise.reject(reply);
     } 
         
+        console.log(chalk.white.bgGreen.bold('Entitlement (from the PIB) OK'));
+
         // Process data from entitlement and keep it 
         menus = reply.body.serviceIds;
         params = reply.body.serviceParams;
         sessionPath = reply.body.sessionPath;
-        var balanceLink = getAction("balances");
-        
-        return r.post("https://" + pibhost + "/cgi-bin/emmob?Appl="+ sessionPath + "&Mob="+balanceLink, {
+        var balanceLink = getAction(reply.body.serviceParams,"balances");
+        var request="https://" + pibhost + "/cgi-bin/emmob?Appl=" + sessionPath + "&" +balanceLink;
+        console.log("POST:" + request);
+        return r.post(request, {
             form: {
-                "global_view":"",
                 "locale":locale,
                 "ver":"1.1",
                 "json":"true"
@@ -223,11 +228,14 @@ r.post('https://' + sdehost + '/1/2/',
     } 
     // Process the response from entitlement
     // TODO : do it lazy !
+    console.log(chalk.white.bgGreen.bold('Get customer context (from the PIB) OK'));
     console.log(JSON.stringify(reply));
 
     // CAll for logout
-    var logoffLink = getAction("logoff");
-    return r.post("https://" + pibhost + "/cgi-bin/emmob?Appl="+ sessionPath + "&" + logoffLink, {
+    var logoffLink = getAction(reply.body.serviceParams, "logoff");
+    var request = "https://" + pibhost + "/cgi-bin/emmob?Appl="+ sessionPath + "&" + logoffLink;
+    console.log("POST:" + request);
+    return r.post(request, {
             form: {
                 "global_view":"",
                 "locale":locale,
@@ -235,16 +243,18 @@ r.post('https://' + sdehost + '/1/2/',
                 "json":"true"
                 }
         });
-
-    // Final    
-    //return Promise.resolve(reply);
     })
 //
 // _________________________________________________________________
 // SAFETY NET
 .then(function(reply) {
+    console.log(chalk.white.bgGreen.bold('Logoff (from the PIB) OK'));
+
     console.log(chalk.green("FINAL Success"));
     console.log(JSON.stringify(reply));
+
+    // Final    
+    return Promise.resolve(reply);
 })
 //
 // _________________________________________________________________
