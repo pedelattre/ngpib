@@ -52,7 +52,7 @@
       "DEBIT_AMOUNT": "Débit"
   },
   "LOGIN" : {
-    "TITLE" : "Connectez vous à votre banque en ligne",
+    "TITLE" : "Svp, connectez vous à votre banque en ligne",
     "NAME" : "Mon identifiant",
     "NAME.INVALID": "Votre identifiant n'est pas valide",
     "PASSWORD" : "Mon mot de passe",

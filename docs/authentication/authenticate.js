@@ -10,6 +10,7 @@ var menus = "";
 var params = "";
 var sessionPath = "";
 var icc = "";
+var customerInfo = "";
 
 // Few functions ----------------------------------------------------------------------------
 function showError(errorTab) {
@@ -61,7 +62,10 @@ var r = request
 // Globals 
 // ----------------------------------------------------------------------
 // const sdehost = 'www.eu532.p2g.netd2.hk.hsbc';
-const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
+//const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
+//const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
+const sdehost = 'www.eu532.p2g.netd2.hsbc.com.hk';
+
 const pibhost = 'client.oat2.hsbc.fr';
 var user = {
     //id: '02100157235', // Business card only holder (carambar, chomeur)
@@ -70,6 +74,7 @@ var user = {
     //id: '01010097250', // Normal user (carambar, chomeur)
     //id: '31564944768', // Normal user (carambar, platini)
     //id: '01020029276', // Normal user (carambar, platini)
+    id: '01020029276',
     password: 'carambar',
     memorableAnswer: 'platini',
     rccDigits: []
@@ -172,7 +177,7 @@ r.post('https://' + sdehost + '/1/2/',
     
     
     // get Customer information and localSSO
-    var customerInfo = reply.body;
+    customerInfo = reply.body;
 
     /*
     Typicall response : 
@@ -208,7 +213,7 @@ r.post('https://' + sdehost + '/1/2/',
         params = reply.body.serviceParams;
         sessionPath = reply.body.sessionPath;
         var balanceLink = getAction(reply.body.serviceParams,"balances");
-        var request="https://" + pibhost + "/cgi-bin/emmob?Appl=" + sessionPath + "&" +balanceLink;
+        var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "&" +balanceLink;
         console.log("POST:" + request);
         return r.post(request, {
             form: {
@@ -248,6 +253,10 @@ r.post('https://' + sdehost + '/1/2/',
 // _________________________________________________________________
 // SAFETY NET
 .then(function(reply) {
+    if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
+        console.log("error status ", reply.header.statusCode);
+        return Promise.reject(reply);
+    } 
     console.log(chalk.white.bgGreen.bold('Logoff (from the PIB) OK'));
 
     console.log(chalk.green("FINAL Success"));
