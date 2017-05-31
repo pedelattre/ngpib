@@ -3,15 +3,29 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../_services/authentication.service';
 import {SharedModule} from '../shared/shared.module';
 import {TranslateService} from '@ngx-translate/core';
+import { TestUser } from '../_models/TestUser';
 
 @Component({
     selector: 'app-login',
     templateUrl: 'login.component.html',
     styleUrls: ['./login.component.css']})
+
 export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     error = '';
+
+    //id: '02100157235', // Business card only holder (carambar, chomeur)<br />
+    //id: '02930007827', // standard user (carambar, platini)<br />
+    //id: '01724387351', // private bank user (carambar, chomeur)<br />
+    //id: '01010097250', // Normal user (carambar, chomeur)<br />
+    //id: '31564944768', // Normal user (carambar, platini)<br />
+    //id: '01020029276', // Normal user (carambar, platini)<br />
+    
+
+    //TestUsers: TestUser[];
+    //TestUsers.push(new TestUser('02100157235','',''));
+
 
     constructor(
         private router: Router,
