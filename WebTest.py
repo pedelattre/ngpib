@@ -18,7 +18,7 @@ class WebTest(unittest.TestCase):
             'body > app-root > div > main > section > app-login > div > h2'
             )
         print("Catched element is " + element.text)
-        self.assertEquals(element.text, 'Connexion')
+        self.assertEquals(element.text, 'Connectez vous \xe0 votre banque en ligne')
 
     def tearDown(self):
         self.driver.quit()
