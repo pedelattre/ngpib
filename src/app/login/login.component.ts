@@ -21,13 +21,8 @@ export class LoginComponent implements OnInit {
     //id: '01010097250', // Normal user (carambar, chomeur)<br />
     //id: '31564944768', // Normal user (carambar, platini)<br />
     //id: '01020029276', // Normal user (carambar, platini)<br />
-    
 
-    //TestUsers: TestUser[];
-    //TestUsers.push(new TestUser('02100157235','',''));
-
-
-    constructor(
+     constructor(
         private router: Router,
         private authenticationService: AuthenticationService) { }
 
@@ -38,11 +33,12 @@ export class LoginComponent implements OnInit {
 
     login() {
         this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
+        this.authenticationService.login(this.model.username, this.model.memanswer, this.model.password)
             .subscribe(result => {
-                if (result === true) {
+                if (result == true) {
                     // login successful
-                    this.router.navigate(['/dashboard']);
+                    localStorage.setItem('currentUser','is falsly Connected ')
+                    this.router.navigate(['dashboard']);
                 } else {
                     // login failed
                     this.error = 'Username or password is incorrect';

@@ -17,7 +17,7 @@ function showError(errorTab) {
     var tempErrorStr = "";
     for(var i=0;i<errorTab.length;i++){
         tempErrorStr += errorTab[i].desc;
-    } 
+    }
     console.log(chalk.red(tempErrorStr));
 }
 
@@ -60,11 +60,12 @@ var r = request
         //'proxy':'http://$pplsoft$:$password$@uk-proxy-01.systems.uk.hsbc' // if required to exit corporate network
     });
 
-// Globals 
+// Globals
 // ----------------------------------------------------------------------
 // const sdehost = 'www.eu532.p2g.netd2.hk.hsbc';
 const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
 //const sdehost = "dtest-evrgrn-friif.lp.hsbc.co.uk";
+//const sdehost = "www.hsbc.fr";
 
 const pibhost = 'client.oat2.hsbc.fr';
 //const pibhost = "client.hsbc.fr";
@@ -101,7 +102,7 @@ r.post('https://' + sdehost + '/1/2/',
         }
     }
 // _________________________________________________________________
-// First Response from the Authentication layer, 
+// First Response from the Authentication layer,
 // get back the RCC pattern sent back by the server
 ).then(function (reply) {
     console.log(chalk.blue("## CAM10 response ", JSON.stringify(reply,null,'  ')));
@@ -115,7 +116,7 @@ r.post('https://' + sdehost + '/1/2/',
     //
     // Open Mobile Authentication
     return r.get('https://' + sdehost + '/1/2/authentication/TEST_MOBILE_CAM30');
-    
+
 // _________________________________________________________________
 // Then wait for previous GET on TEST_MOBILE_CAM30
 }).then(function(reply) {
@@ -125,13 +126,13 @@ r.post('https://' + sdehost + '/1/2/',
          showError(reply.header.errorMsg)
          return Promise.reject(reply);
     }
-    
+
     //var rccPassword = user.rccDigits.map(function (d) {return user.password.charAt(d-1);}).join('');
     var rccPassword = user.rccDigits.map(function (d){
         return user.password.charAt(d < 7 ? d - 1: user.password.length - 1 - (8 - d));
     }).join('');
     console.log(chalk.magenta('Authenticating rccPassword=', rccPassword, 'memAnswer=',user.memorableAnswer));
-    
+
     return r.post('https://'+sdehost+'/1/2/',
         {
             form: {
@@ -159,16 +160,16 @@ r.post('https://' + sdehost + '/1/2/',
         showError(reply.header.errorMsg)
         return Promise.reject(reply);
 
-    } 
+    }
     console.log(chalk.white.bgGreen.bold('Authentication SUCCESSFUL (not deferred)'));
-    
+
     // Post to mobile-localsso command
     return r.post("https://" + sdehost + "/1/3/authentication/mobile-localsso", {
         form: {
             "ver": "1.1",
             "json": ""
         }
-    }); 
+    });
 })
 // _________________________________________________________________
 // Then wait for the POST CAM30 response : get localSSO
@@ -179,16 +180,16 @@ r.post('https://' + sdehost + '/1/2/',
         console.log("error status ", reply.header.statusCode);
         showError(reply.header.errorMsg)
         return Promise.reject(reply);
-    } 
+    }
 
     console.log(chalk.white.bgGreen.bold('Get LocalSSO OK'));
-    
-    
+
+
     // get Customer information and localSSO
     customerInfo = reply.body;
 
     /*
-    Typicall response : 
+    Typicall response :
     "statusMessage": "Last logon successful on",
     "customerName": "LUGINA",
     "ssoToken": "20093d9c44a289b2775c4cb63e5a0d9c1b6b6b2ac2712c102db52990c1d76188ef0ac41a3c57012527d80da4995ba2ed0b87e1faadc9981ddf3a5e474cece485b2a15e534e015bde616e764efa1d9b51d7a93910d29a3ef0e1f341359b4274df09cd6c843f5cbe50157c7eae7eba85b429b9810c8998f1f99e5ad3b4c9028202",
@@ -212,18 +213,18 @@ r.post('https://' + sdehost + '/1/2/',
         console.log("error status ", reply.header.statusCode);
         showError(reply.header.errorMsg)
         return Promise.reject(reply);
-    } 
-        
+    }
+
         console.log(chalk.white.bgGreen.bold('Entitlement (from the PIB) OK'));
 
-        // Process data from entitlement and keep it 
+        // Process data from entitlement and keep it
         menus = reply.body.serviceIds;
         params = reply.body.serviceParams;
         sessionPath = reply.body.sessionPath;
 
         var balanceLink = getAction(params,"balances");
         var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "?" +balanceLink;
-        
+
         console.log(chalk.magenta("POST:" + request));
         return r.post(request, {
             form: {
@@ -240,7 +241,7 @@ r.post('https://' + sdehost + '/1/2/',
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.log("error status ", reply.header.statusCode);
         return Promise.reject(reply);
-    } 
+    }
     // Process the response from entitlement
     // TODO : do it lazy !
     console.log(chalk.white.bgGreen.bold('Get customer context (from the PIB) OK'));
@@ -265,10 +266,10 @@ r.post('https://' + sdehost + '/1/2/',
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.log("error status ", reply.header.statusCode);
         return Promise.reject(reply);
-    } 
+    }
     console.log(chalk.white.bgGreen.bold('Logoff (from the PIB) OK'));
     console.log(JSON.stringify(reply));
-    
+
     // CAll for logoff IdnV
     var request = "https://" + sdehost + "/1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.mobile15.system-maintenance";
     console.log(chalk.magenta("POST:" + request));
@@ -278,7 +279,7 @@ r.post('https://' + sdehost + '/1/2/',
             "ver": "1.1",
             "json": ""
         }
-    }); 
+    });
 
 })
 //
@@ -288,10 +289,10 @@ r.post('https://' + sdehost + '/1/2/',
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.log("error status ", reply.header.statusCode);
         return Promise.reject(reply);
-    } 
+    }
     console.log(chalk.white.bgGreen.bold('Logoff (from IDnV) OK'));
     console.log(JSON.stringify(reply));
-    // Final    
+    // Final
     return Promise.resolve(reply);
 })
 //

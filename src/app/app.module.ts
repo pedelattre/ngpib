@@ -14,6 +14,7 @@ import { CustomerService } from './_services/customer.service';
 import { TransactionsService } from './_services/transactions.service';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
+import { CONFIG } from './_services/config';
 
 // FakeBackend
 import {fakeBackendProvider} from './_helpers/fake-backend';
@@ -87,6 +88,7 @@ export function HttpLoaderFactory(http: Http) {
     TransactionsService,
     AuthenticationService,
     UserService,
+    CONFIG
     // BEWARE : fakeBAckend will intercept all HTTP request (translation won't work)
     //fakeBackendProvider,
     //MockBackend,
