@@ -67,11 +67,11 @@ var user = {
     //id: '02100157235', // Business card only holder (carambar, chomeur)
     //id: '02930007827', // standard user (carambar, platini)
     //id: '01724387351', // private bank user (carambar, chomeur)
-    //id: '01010097250', // Normal user (carambar, platini)
+    id: '01010097250', // Normal user (carambar, chomeur)
     //id: '31564944768', // Normal user (carambar, platini)
-    id : '01020029276', // Normal user (carambar, platini)
+    //id : '01020029276', // Normal user (carambar, platini)
     password: 'carambar',
-    memorableAnswer: 'platini',
+    memorableAnswer: 'chomeur',
     rccDigits: []
 };
 var locale = 'fr';
