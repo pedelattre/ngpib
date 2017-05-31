@@ -1,4 +1,4 @@
-
+node {
     // Possible agent configurations - you must have one and only one at the top level.
     agent any
 
@@ -68,3 +68,4 @@
             '''
         }
     }
+}

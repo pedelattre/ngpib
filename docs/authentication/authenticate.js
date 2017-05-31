@@ -37,6 +37,7 @@ var messages = {
   "C001" : "Vous avez été inactif pendant un certain temps. Afin de protéger vos données, vous avez été automatiquement déconnecté. Merci de vous connecter à nouveau." ,
   "C003" : "Cette étape est obligatoire.",
   "C005" : "Vous devez enregistrer votre HSBC Secure Key Mobile pour accéder à cette fonctionnalité.<br/>Vous pouvez enregistrer votre HSBC Secure Key Mobile selon 2 façons:<br/>Vous pouvez utiliser l'activation en ligne après vous être connecté.<br/>Vous pouvez contacter le Centre de Relations Clients pour enregistrer votre HSBC Secure Key Mobile.<br/>Si vous n'avez pas reçu HSBC Secure Key 30 jours après votre choix, veuillez contacter rapidement le Centre de Relations Clients.",
+  "C009" : "Activation CAM40 (attente de token) en cours",
   "E000" : "Erreur de connexion. Merci d'essayer à nouveau ultérieurement.",
   "P001" : "Nous avons rencontré un problème. Merci de vous connecter à nouveau.",
   "P002" : "Nous avons rencontré un problème. Merci de vous connecter à nouveau.",
@@ -62,24 +63,25 @@ var r = request
 // Globals 
 // ----------------------------------------------------------------------
 // const sdehost = 'www.eu532.p2g.netd2.hk.hsbc';
-//const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
-//const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
-const sdehost = 'www.eu532.p2g.netd2.hsbc.com.hk';
+const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
+//const sdehost = "dtest-evrgrn-friif.lp.hsbc.co.uk";
 
 const pibhost = 'client.oat2.hsbc.fr';
+//const pibhost = "client.hsbc.fr";
+//const pibhost = "sylp.client.hsbc.fr";
 var user = {
     //id: '02100157235', // Business card only holder (carambar, chomeur)
     //id: '02930007827', // standard user (carambar, platini)
     //id: '01724387351', // private bank user (carambar, chomeur)
     //id: '01010097250', // Normal user (carambar, chomeur)
     //id: '31564944768', // Normal user (carambar, platini)
-    //id: '01020029276', // Normal user (carambar, platini)
-    id: '01020029276',
-    password: 'carambar',
-    memorableAnswer: 'platini',
+    id: '01020029276', // Normal user (carambar, platini)
+    //id: "33730489975",
+    password: "carambar",
+    memorableAnswer: "platini",
     rccDigits: []
 };
-var locale = 'fr';
+var locale = "fr";
 
 
 // ########################################################################
@@ -91,10 +93,11 @@ r.post('https://' + sdehost + '/1/2/',
             initialAccess: true,
             nextPage: "IDV_CAM10_AUTHENTICATION_MOBILE",
             userid: user.id,
-            cookieuserid: '',
+            cookieuserid: false,
             ver: "1.1",
             json: "",
-            __locale: locale
+            __locale: locale,
+            CHANNEL: "MOBILE"
         }
     }
 // _________________________________________________________________
@@ -108,6 +111,7 @@ r.post('https://' + sdehost + '/1/2/',
          return Promise.reject(reply);
     }
     user.rccDigits = reply.body.rccDigits.split(',').map(function (c) {return parseInt(c) });
+
     //
     // Open Mobile Authentication
     return r.get('https://' + sdehost + '/1/2/authentication/TEST_MOBILE_CAM30');
@@ -121,13 +125,17 @@ r.post('https://' + sdehost + '/1/2/',
          showError(reply.header.errorMsg)
          return Promise.reject(reply);
     }
-    var rccPassword = user.rccDigits.map(function (d) {return user.password.charAt(d-1);}).join('');
+    
+    //var rccPassword = user.rccDigits.map(function (d) {return user.password.charAt(d-1);}).join('');
+    var rccPassword = user.rccDigits.map(function (d){
+        return user.password.charAt(d < 7 ? d - 1: user.password.length - 1 - (8 - d));
+    }).join('');
     console.log(chalk.magenta('Authenticating rccPassword=', rccPassword, 'memAnswer=',user.memorableAnswer));
     
     return r.post('https://'+sdehost+'/1/2/',
         {
             form: {
-                idv_cmd: "idv.Authentication",
+                "idv_cmd": "idv.Authentication",
                 "ver": "1.1",
                 "json": "",
                 "__FMNUserId": user.id,
@@ -212,9 +220,11 @@ r.post('https://' + sdehost + '/1/2/',
         menus = reply.body.serviceIds;
         params = reply.body.serviceParams;
         sessionPath = reply.body.sessionPath;
-        var balanceLink = getAction(reply.body.serviceParams,"balances");
-        var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "&" +balanceLink;
-        console.log("POST:" + request);
+
+        var balanceLink = getAction(params,"balances");
+        var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "?" +balanceLink;
+        
+        console.log(chalk.magenta("POST:" + request));
         return r.post(request, {
             form: {
                 "locale":locale,
@@ -234,15 +244,14 @@ r.post('https://' + sdehost + '/1/2/',
     // Process the response from entitlement
     // TODO : do it lazy !
     console.log(chalk.white.bgGreen.bold('Get customer context (from the PIB) OK'));
-    console.log(JSON.stringify(reply));
+    console.log(chalk.white.bgBlue(JSON.stringify(reply)));
 
     // CAll for logout
-    var logoffLink = getAction(reply.body.serviceParams, "logoff");
-    var request = "https://" + pibhost + "/cgi-bin/emmob?Appl="+ sessionPath + "&" + logoffLink;
-    console.log("POST:" + request);
+    var logoffLink = getAction(params, "logoff");
+    var request = "https://" + pibhost + "/cgi-bin/"+ sessionPath + "?" + logoffLink;
+    console.log(chalk.magenta("POST:" + request));
     return r.post(request, {
             form: {
-                "global_view":"",
                 "locale":locale,
                 "ver":"1.1",
                 "json":"true"
@@ -251,17 +260,37 @@ r.post('https://' + sdehost + '/1/2/',
     })
 //
 // _________________________________________________________________
-// SAFETY NET
+// Logoff IDnV
 .then(function(reply) {
     if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
         console.log("error status ", reply.header.statusCode);
         return Promise.reject(reply);
     } 
     console.log(chalk.white.bgGreen.bold('Logoff (from the PIB) OK'));
-
-    console.log(chalk.green("FINAL Success"));
     console.log(JSON.stringify(reply));
+    
+    // CAll for logoff IdnV
+    var request = "https://" + sdehost + "/1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.mobile15.system-maintenance";
+    console.log(chalk.magenta("POST:" + request));
+    // Post to mobile-localsso command
+    return r.post(request, {
+        form: {
+            "ver": "1.1",
+            "json": ""
+        }
+    }); 
 
+})
+//
+// _________________________________________________________________
+// Logoff IDnV
+.then(function(reply) {
+    if (reply.header && reply.header.statusCode  && reply.header.statusCode.match(/^E.*$/)) {
+        console.log("error status ", reply.header.statusCode);
+        return Promise.reject(reply);
+    } 
+    console.log(chalk.white.bgGreen.bold('Logoff (from IDnV) OK'));
+    console.log(JSON.stringify(reply));
     // Final    
     return Promise.resolve(reply);
 })
