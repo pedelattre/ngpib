@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class TransactionsService {
-  URL = '../_data/transactions.json';
+  URL = 'app/_data/transactions.json';
   constructor(private http: Http) { }
 
   getTransactions(): Observable<any> {
