@@ -4,8 +4,8 @@ from __future__ import division
 import unittest
 from selenium import webdriver
 
-URL='http://localhost:4200'
-#URL = 'http://441481051737-eu-west-1-ngpib.s3-website-eu-west-1.amazonaws.com/login'
+#URL='http://localhost:4200'
+URL = 'http://441481051737-eu-west-1-ngpib.s3-website-eu-west-1.amazonaws.com/login'
 
 class WebTest(unittest.TestCase):
     """ xxx """
@@ -22,7 +22,7 @@ class WebTest(unittest.TestCase):
         element = self.driver.find_element_by_css_selector(
             'body > app-root > div > main > section > app-login > div > h2'
             )
-        self.assertEquals(element.text, u'Svp, connectez vous \xe0 votre banque en ligne')
+        self.assertEquals(element.text, u'Connectez vous \xe0 votre banque en ligne')
 
     def testLoginPageHomePage2(self):
         """ Test memorable question label """

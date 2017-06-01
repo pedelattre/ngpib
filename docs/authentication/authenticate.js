@@ -62,7 +62,6 @@ var r = request
 
 // Globals
 // ----------------------------------------------------------------------
-// const sdehost = 'www.eu532.p2g.netd2.hk.hsbc';
 const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
 //const sdehost = "dtest-evrgrn-friif.lp.hsbc.co.uk";
 //const sdehost = "www.hsbc.fr";

@@ -25,10 +25,10 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-let context = require.context('./', true, /\.spec\.ts$/);
+//let context = require.context('./', true, /\.spec\.ts$/);
 
 // ONLY this test 
-context = require.context('./', true, /customer.service.spec.ts/);
+let context = require.context('./app/_services/', true, /customer.service.spec.ts/);
 
 // And load the modules.
 context.keys().map(context);
