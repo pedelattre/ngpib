@@ -52,7 +52,7 @@
       "DEBIT_AMOUNT": "Debit"
   },
   "LOGIN" : {
-    "TITLE" : "Please log to your online banking",
+    "TITLE" : "Log to your online banking",
     "NAME" : "My identifier",
     "NAME.INVALID": "Your name is not valid",
     "PASSWORD" : "My password",
