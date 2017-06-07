@@ -1,0 +1,519 @@
+{ request: 
+   { debugId: 1,
+     uri: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/2/',
+     method: 'POST',
+     headers: 
+      { host: 'www.eu532.p2g.netd2.hsbc.com.hk',
+        'content-type': 'application/x-www-form-urlencoded',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        'content-length': 165 },
+     body: 'idv_cmd=idv.Authentication&initialAccess=true&nextPage=IDV_CAM10_AUTHENTICATION_MOBILE&userid=01020029276&cookieuserid=false&ver=1.1&json=&__locale=fr&CHANNEL=MOBILE' } }
+{ redirect: 
+   { debugId: 1,
+     statusCode: 302,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:45 GMT',
+        vary: 'DECRYPTED,User-Agent',
+        location: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwtTHwtDTydPLwswsL8jE1cDfVzoxwVAWt6jbI!/',
+        'content-length': '0',
+        'set-cookie': [Array],
+        expires: 'Thu, 01 Dec 1994 16:00:00 GMT',
+        'cache-control': 'no-cache="set-cookie, set-cookie2"',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/plain',
+        'content-language': 'en' },
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwtTHwtDTydPLwswsL8jE1cDfVzoxwVAWt6jbI!/' } }
+{ request: 
+   { debugId: 1,
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwtTHwtDTydPLwswsL8jE1cDfVzoxwVAWt6jbI!/',
+     method: 'GET',
+     headers: 
+      { authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        referer: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/2/',
+        host: 'www.eu532.p2g.netd2.hsbc.com.hk',
+        cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=DoGu0acz/R5gdVNa76r2D0LaitA=; LB_COOKIE_1=912314890.22528.0000' } } }
+{ response: 
+   { debugId: 1,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:46 GMT',
+        vary: 'DECRYPTED,User-Agent,Accept-Encoding,Cookie',
+        'ibm-web2-location': '/1/2/!ut/p/b1/jctLDsIgFIXhtXQFXOR1GVK1BVqZGIllYhiYpkkfk8b1i4lzPbOTfD9JZKACmZZMCUbuJK35NY15n7Y1z5-f5KO1AqnpwCG_aHC19RhjYPxMCxgKAIi9rkF4BEm74BsJ3_3XH1tjueoBsEBwxt6UvJ4OYNivPthteZIlzQ2aqnoDjn-onA!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'content-location': '/1/2/!ut/p/b1/jctLDsIgFIXhtXQFXOR1GVK1BVqZGIllYhiYpkkfk8b1i4lzPbOTfD9JZKACmZZMCUbuJK35NY15n7Y1z5-f5KO1AqnpwCG_aHC19RhjYPxMCxgKAIi9rkF4BEm74BsJ3_3XH1tjueoBsEBwxt6UvJ4OYNivPthteZIlzQ2aqnoDjn-onA!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'cache-control': 'no-cache, no-store, must-revalidate',
+        expires: 'Thu, 01 Jan 1970 00:00:00 GMT',
+        pragma: 'no-cache',
+        'content-length': '416',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/html; charset=UTF-8',
+        'content-language': 'en' },
+     statusCode: 200,
+     body: { body: [Object], header: [Object] } } }
+## CAM10 response  {
+  "body": {
+    "tokenType": "VIR10",
+    "isSelectProfile": false,
+    "profileList": [
+      {
+        "index": "0",
+        "name": "HSBCDirect"
+      }
+    ],
+    "rccDigits": "1,7,8",
+    "customerType": "I",
+    "maxCamLevel": "40",
+    "memQuestion": "Le nom d'un champion sportif"
+  },
+  "header": {
+    "version": "1.1",
+    "token": "",
+    "errorMsg": [],
+    "statusCode": "0000"
+  }
+}
+{ request: 
+   { debugId: 2,
+     uri: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/2/authentication/TEST_MOBILE_CAM30',
+     method: 'GET',
+     headers: 
+      { host: 'www.eu532.p2g.netd2.hsbc.com.hk',
+        cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=DoGu0acz/R5gdVNa76r2D0LaitA=; LB_COOKIE_1=912314890.22528.0000',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json' } } }
+{ redirect: 
+   { debugId: 2,
+     statusCode: 302,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:47 GMT',
+        vary: 'DECRYPTED,User-Agent',
+        location: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/Vcu7DsIwDEDRT7JTN4kzBgqxeQ5VK5oFZUKVSlkQ308YGa90LmSYjGUKjrwluEFey2d-lPf8Wsvy6-zuSSybeETl9hxQN3LgcbxQPzQVTBVsU5TWnxC5QtQog3d912Ck_z-x7lD91YvpAuLewjMv8QtyFPlB/',
+        'content-length': '0',
+        'set-cookie': [Array],
+        expires: 'Thu, 01 Dec 1994 16:00:00 GMT',
+        'cache-control': 'no-cache="set-cookie, set-cookie2"',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/plain',
+        'content-language': 'en' },
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/Vcu7DsIwDEDRT7JTN4kzBgqxeQ5VK5oFZUKVSlkQ308YGa90LmSYjGUKjrwluEFey2d-lPf8Wsvy6-zuSSybeETl9hxQN3LgcbxQPzQVTBVsU5TWnxC5QtQog3d912Ck_z-x7lD91YvpAuLewjMv8QtyFPlB/' } }
+{ request: 
+   { debugId: 2,
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/Vcu7DsIwDEDRT7JTN4kzBgqxeQ5VK5oFZUKVSlkQ308YGa90LmSYjGUKjrwluEFey2d-lPf8Wsvy6-zuSSybeETl9hxQN3LgcbxQPzQVTBVsU5TWnxC5QtQog3d912Ck_z-x7lD91YvpAuLewjMv8QtyFPlB/',
+     method: 'GET',
+     headers: 
+      { cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=DoGu0acz/R5gdVNa76r2D0LaitA=; LB_COOKIE_1=912314890.22528.0000; com.ibm.portal.SUA_WPReqURL=2000:https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/hctNCoAgEEDhIzlmOrYcslQKWkRQbsJVCP1sovNnJ2j54HsssIVLLSolUAo2s3DGJ23xTtcZ96-DWq2TmlMH3mrfgMcBHTcVQCszWDKoLbkSewCdIXhyE6rRFEDi7z_CTi-YdHZq/',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        referer: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/2/authentication/TEST_MOBILE_CAM30',
+        host: 'www.eu532.p2g.netd2.hsbc.com.hk' } } }
+{ response: 
+   { debugId: 2,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:50 GMT',
+        vary: 'DECRYPTED,User-Agent,Accept-Encoding,Cookie',
+        'ibm-web2-location': '/1/2/!ut/p/b1/jcu9DoMgGIXha_EK-BCBjxHbKKBlMZLK0jA0jYk_i_H6S5Pu7dlO8rwkkolyZEowyRm5k7ilc36lY963tHx-FI_WcKS6A4vVTYGtjcMQPBvGMoMpg0urTSV7AMwQrDajFMO1BM3-6wFCr2rgDkHQzrtGwHe_em_29UnWuDSoi-INA9L1Sg!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'content-location': '/1/2/!ut/p/b1/jcu9DoMgGIXha_EK-BCBjxHbKKBlMZLK0jA0jYk_i_H6S5Pu7dlO8rwkkolyZEowyRm5k7ilc36lY963tHx-FI_WcKS6A4vVTYGtjcMQPBvGMoMpg0urTSV7AMwQrDajFMO1BM3-6wFCr2rgDkHQzrtGwHe_em_29UnWuDSoi-INA9L1Sg!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'cache-control': 'no-cache, no-store, must-revalidate',
+        expires: 'Thu, 01 Jan 1970 00:00:00 GMT',
+        pragma: 'no-cache',
+        'content-length': '220',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/html; charset=UTF-8',
+        'content-language': 'en' },
+     statusCode: 200,
+     body: { body: {}, header: [Object] } } }
+## CAM20 response  {
+  "body": {},
+  "header": {
+    "version": "1.1",
+    "token": "",
+    "errorMsg": [],
+    "statusCode": "0000"
+  }
+}
+Authenticating rccPassword= car memAnswer= platini
+{ request: 
+   { debugId: 3,
+     uri: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/2/',
+     method: 'POST',
+     headers: 
+      { host: 'www.eu532.p2g.netd2.hsbc.com.hk',
+        cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=DoGu0acz/R5gdVNa76r2D0LaitA=; LB_COOKIE_1=912314890.22528.0000; com.ibm.portal.SUA_WPReqURL=2000:https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/hctNCoAgEEDhIzlmOrYcslQKWkRQbsJVCP1sovNnJ2j54HsssIVLLSolUAo2s3DGJ23xTtcZ96-DWq2TmlMH3mrfgMcBHTcVQCszWDKoLbkSewCdIXhyE6rRFEDi7z_CTi-YdHZq/',
+        'content-type': 'application/x-www-form-urlencoded',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        'content-length': 113 },
+     body: 'idv_cmd=idv.Authentication&ver=1.1&json=&__FMNUserId=01020029276&memorableAnswer=platini&password=car&__locale=fr' } }
+{ redirect: 
+   { debugId: 3,
+     statusCode: 302,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:51 GMT',
+        vary: 'DECRYPTED,User-Agent',
+        location: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/hctNCoAgEEDhIzlmOrYcslQKWkRQbsJVCP1sovNnJ2j54HsssIVLLSolUAo2s3DGJ23xTtcZ96-DWq2TmlMH3mrfgMcBHTcVQCszWDKoLbkSewCdIXhyE6rRFEDi7z_CTi-YdHZq/',
+        'content-length': '0',
+        'set-cookie': [Array],
+        expires: 'Thu, 01 Dec 1994 16:00:00 GMT',
+        'cache-control': 'no-cache="set-cookie, set-cookie2"',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/plain',
+        'content-language': 'en' },
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/hctNCoAgEEDhIzlmOrYcslQKWkRQbsJVCP1sovNnJ2j54HsssIVLLSolUAo2s3DGJ23xTtcZ96-DWq2TmlMH3mrfgMcBHTcVQCszWDKoLbkSewCdIXhyE6rRFEDi7z_CTi-YdHZq/' } }
+{ request: 
+   { debugId: 3,
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/hctNCoAgEEDhIzlmOrYcslQKWkRQbsJVCP1sovNnJ2j54HsssIVLLSolUAo2s3DGJ23xTtcZ96-DWq2TmlMH3mrfgMcBHTcVQCszWDKoLbkSewCdIXhyE6rRFEDi7z_CTi-YdHZq/',
+     method: 'GET',
+     headers: 
+      { cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=Cxnfpoa/igfOgHxdnYRMcqJb+e4=; LB_COOKIE_1=912314890.22528.0000; LtpaToken2=Qy0MYjNT4JRcsvt/ED4ojxlRn1ddIQ2LgyH9tKnzekj4BunFLF8Zf6pG3Uaz/JvA//3DOpHzRUN0vOmRhJF6DmNdP54/5gQPLuoXwbQeBtfYAXwJ8Vx/Eg4aDyztdThalTEJ4dP5+fPiNGpY5gH5cTRMawR0XJ3xkqb/h+3eH0uO8HElcXIYQ+LUHgE1GgtOwpxsNgwgYvk+8QMt30u0t5XuMwlfdz1MQCqLCwQdvnGIxWfx1xFoeZTkR57FdBF3OTuvsAWyyAum6Zix23CoeK4EEkjfc0IsXauM1/0KlS8ipAY6sROg4UWk62vHA+psRl7Q+Qm0YUlxzkR+mIV8B5o4kG4KK8mc3LAtfyz1+gVpkeCakm1ZaNZyy2PRMAmdtDDqxGNvzgi38V8KfawD9NN8iKUyfk9nWdQ3dZy2MavQ1VeRYUiREkSHcdlXucArgcKie3TfJCBMlY0TEnzWk0kOxQJa6Q9jDEQlS/8giD/2ZGV3pAtfNUJcKovB0YeYUoer8MwU/+91ovIQbMD01AHiIK4K5hACW9+1YRstdS1ARcNGxKs5Y5bZGXhalwVRui6ZYXSmxDdheKC8kEd2Bj9PIYDGBn5sOHONzaEc9GvZEpJCFibE8lnjMx/JncZgVFHtM8FJu6Lwedm8qpBpELGbNSuDfuN3SNS5zuoErMtOOr08i+XEpcBGi9CK7k+QYEisr8c7+9mztgxQNvRKQaQ/iQZSjbiSSuKeuboMVoprkbAa10qpkSB1SMSr9dYNdeFzuI7nw/slnXqPJqwFW99Xo9/dmPXud3sbClr6CODTIAVdZ56GFIl51Vn3azlLMc0bJ1QQIC5U0UP3qZ5Rcw==; LtpaToken=7O13d71foiFChcJwBzGjkviXKU2cbMrco6gduDD44AvUuZFuw1n3EYolddp3ugCrnHhNszFhWGlJGL5pZAaBgKIuM9tdI6EntmpZkrZjiPRGyO4PaQrbiMXjBEbRrg2odc8flUUPCLW3l7+5BgdkZfn7xIrjJJbCnFuJ44Tb+efkoADBe+SzxKM8bxnuKTBTPo2s8cn6ZQ8JbtmLuhLYAD83HFylyO1UTPMro+dLWqb/KhSSsFIZlb7sK6zPwjRbsa0D/qjXcrlyTVb3PkvP7ZHdOLZy8IVxfD8wtBL6Q3cuOPFbbfQykju7zhVpnXu/GXA7Zfzb6Y586OXAKp2yg6aD8YeaEUXXt/Gyiy2hRldUhakoN8nQ7AQyMMNavJQMXsPIaQAqJY61HbJuTUSsJiG+FOHWWOMT2UthuPS9diKl7pre1WZIOw==',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        referer: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/2/',
+        host: 'www.eu532.p2g.netd2.hsbc.com.hk' } } }
+{ response: 
+   { debugId: 3,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:52 GMT',
+        vary: 'DECRYPTED,User-Agent,Accept-Encoding,Cookie',
+        'ibm-web2-location': '/1/3/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTzdLTxdDTzN_c09DF0sDQzcTIEKIoEKnN0dPUzMfQwMLIAKDTwdPULNzYJdjAwcjQnp9_PIz03Vz43KsQAAqnr6tQ!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'content-location': '/1/3/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTzdLTxdDTzN_c09DF0sDQzcTIEKIoEKnN0dPUzMfQwMLIAKDTwdPULNzYJdjAwcjQnp9_PIz03Vz43KsQAAqnr6tQ!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'cache-control': 'no-cache, no-store, must-revalidate',
+        expires: 'Thu, 01 Jan 1970 00:00:00 GMT',
+        pragma: 'no-cache',
+        'content-length': '243',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/html; charset=UTF-8',
+        'content-language': 'en' },
+     statusCode: 200,
+     body: { body: [Object], header: [Object] } } }
+## CAM30 response  {
+  "body": {
+    "otpLinkRemainDays": "0"
+  },
+  "header": {
+    "version": "1.1",
+    "token": "",
+    "errorMsg": [],
+    "statusCode": "0000"
+  }
+}
+Authentication SUCCESSFUL (not deferred)
+{ request: 
+   { debugId: 4,
+     uri: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/3/authentication/mobile-localsso',
+     method: 'POST',
+     headers: 
+      { host: 'www.eu532.p2g.netd2.hsbc.com.hk',
+        cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=Cxnfpoa/igfOgHxdnYRMcqJb+e4=; LB_COOKIE_1=912314890.22528.0000; LtpaToken2=Qy0MYjNT4JRcsvt/ED4ojxlRn1ddIQ2LgyH9tKnzekj4BunFLF8Zf6pG3Uaz/JvA//3DOpHzRUN0vOmRhJF6DmNdP54/5gQPLuoXwbQeBtfYAXwJ8Vx/Eg4aDyztdThalTEJ4dP5+fPiNGpY5gH5cTRMawR0XJ3xkqb/h+3eH0uO8HElcXIYQ+LUHgE1GgtOwpxsNgwgYvk+8QMt30u0t5XuMwlfdz1MQCqLCwQdvnGIxWfx1xFoeZTkR57FdBF3OTuvsAWyyAum6Zix23CoeK4EEkjfc0IsXauM1/0KlS8ipAY6sROg4UWk62vHA+psRl7Q+Qm0YUlxzkR+mIV8B5o4kG4KK8mc3LAtfyz1+gVpkeCakm1ZaNZyy2PRMAmdtDDqxGNvzgi38V8KfawD9NN8iKUyfk9nWdQ3dZy2MavQ1VeRYUiREkSHcdlXucArgcKie3TfJCBMlY0TEnzWk0kOxQJa6Q9jDEQlS/8giD/2ZGV3pAtfNUJcKovB0YeYUoer8MwU/+91ovIQbMD01AHiIK4K5hACW9+1YRstdS1ARcNGxKs5Y5bZGXhalwVRui6ZYXSmxDdheKC8kEd2Bj9PIYDGBn5sOHONzaEc9GvZEpJCFibE8lnjMx/JncZgVFHtM8FJu6Lwedm8qpBpELGbNSuDfuN3SNS5zuoErMtOOr08i+XEpcBGi9CK7k+QYEisr8c7+9mztgxQNvRKQaQ/iQZSjbiSSuKeuboMVoprkbAa10qpkSB1SMSr9dYNdeFzuI7nw/slnXqPJqwFW99Xo9/dmPXud3sbClr6CODTIAVdZ56GFIl51Vn3azlLMc0bJ1QQIC5U0UP3qZ5Rcw==; LtpaToken=7O13d71foiFChcJwBzGjkviXKU2cbMrco6gduDD44AvUuZFuw1n3EYolddp3ugCrnHhNszFhWGlJGL5pZAaBgKIuM9tdI6EntmpZkrZjiPRGyO4PaQrbiMXjBEbRrg2odc8flUUPCLW3l7+5BgdkZfn7xIrjJJbCnFuJ44Tb+efkoADBe+SzxKM8bxnuKTBTPo2s8cn6ZQ8JbtmLuhLYAD83HFylyO1UTPMro+dLWqb/KhSSsFIZlb7sK6zPwjRbsa0D/qjXcrlyTVb3PkvP7ZHdOLZy8IVxfD8wtBL6Q3cuOPFbbfQykju7zhVpnXu/GXA7Zfzb6Y586OXAKp2yg6aD8YeaEUXXt/Gyiy2hRldUhakoN8nQ7AQyMMNavJQMXsPIaQAqJY61HbJuTUSsJiG+FOHWWOMT2UthuPS9diKl7pre1WZIOw==',
+        'content-type': 'application/x-www-form-urlencoded',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        'content-length': 13 },
+     body: 'ver=1.1&json=' } }
+{ response: 
+   { debugId: 4,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:53 GMT',
+        vary: 'DECRYPTED,User-Agent,Accept-Encoding,Cookie',
+        'ibm-web2-location': '/1/3/!ut/p/b1/hctLCoAgFEDRJb1npr6GUpFSRB-CchIOIoI-k2j92QoaXjgXHExMEE8kV4LDCO70z7b6e7tOv3_t5FwYQUyXaKnNGdq661F0TRQzDGAKIC20iVWFSAGi1WZQss8i1Pzvr811LHC4nV4MtCz-/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'content-location': '/1/3/!ut/p/b1/hctLCoAgFEDRJb1npr6GUpFSRB-CchIOIoI-k2j92QoaXjgXHExMEE8kV4LDCO70z7b6e7tOv3_t5FwYQUyXaKnNGdq661F0TRQzDGAKIC20iVWFSAGi1WZQss8i1Pzvr811LHC4nV4MtCz-/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'cache-control': 'no-cache, no-store, must-revalidate',
+        expires: 'Thu, 01 Jan 1970 00:00:00 GMT',
+        pragma: 'no-cache',
+        'content-length': '642',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/html; charset=UTF-8',
+        'content-language': 'en' },
+     statusCode: 200,
+     body: { body: [Object], header: [Object] } } }
+POST CAM30 response  {
+  "body": {
+    "statusMessage": "Last logon successful on",
+    "customerName": "LUGINA",
+    "ssoToken": "20093d9c44a289b2775c4cb63e5a0d9c37534548351e75a1e4680e1bda539072ef0ac41a3c57012527d80da4995ba2ed0b87e1faadc9981ddf3a5e474cece485b2a15e534e015bde616e764efa1d9b51d7a93910d29a3ef0e1f341359b4274dfcb114746cecafe9e5307beb4a62ed42ad604ce54501a465cf2625d49933ad985",
+    "lastLogonDate": "06/06/2017 10:13:56",
+    "isISFSupported": false,
+    "lastLogonStatus": true
+  },
+  "header": {
+    "version": "1.1",
+    "token": "",
+    "errorMsg": [],
+    "statusCode": "0000"
+  }
+}
+Get LocalSSO OK
+{ request: 
+   { debugId: 5,
+     uri: 'https://client.oat2.hsbc.fr/cgi-bin/emmob?Appl=WEBACC&Mob=20093d9c44a289b2775c4cb63e5a0d9c37534548351e75a1e4680e1bda539072ef0ac41a3c57012527d80da4995ba2ed0b87e1faadc9981ddf3a5e474cece485b2a15e534e015bde616e764efa1d9b51d7a93910d29a3ef0e1f341359b4274dfcb114746cecafe9e5307beb4a62ed42ad604ce54501a465cf2625d49933ad985',
+     method: 'GET',
+     headers: { host: 'client.oat2.hsbc.fr', accept: 'application/json' } } }
+{ response: 
+   { debugId: 5,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:54 GMT',
+        server: 'Apache/2.4.7 (Unix) OpenSSL/0.9.8y',
+        'access-control-allow-origin': 'www.eu532.p2g.netd2.hsbc.com.hk',
+        'access-control-allow-methods': 'POST, GET, OPTIONS, DELETE, PUT',
+        'access-control-max-age': '1000',
+        'access-control-allow-headers': 'x-requested-with, Content-Type, origin, authorization, accept, client-security-token',
+        vary: 'Accept-Encoding',
+        'cache-control': 'no-store, no-cache, must-revalidate, max-age=0, private',
+        expires: 'Tue, 06 Jun 2017 08:14:54 GMT',
+        pragma: 'no-cache',
+        'content-type': 'text/html; charset=ISO-8859-15',
+        'set-cookie': [Array],
+        connection: 'close',
+        'transfer-encoding': 'chunked' },
+     statusCode: 200,
+     body: { header: [Object], body: [Object] } } }
+Entitlement response  {
+  "header": {
+    "token": "",
+    "version": "1.0",
+    "statusCode": "0000",
+    "errorMsg": []
+  },
+  "body": {
+    "serviceIds": [
+      "kyc",
+      "balances",
+      "transfer",
+      "rate_inquiry",
+      "logoff",
+      "togglelang",
+      "read_message",
+      "pending_transfers",
+      "lost_stolen_card",
+      "cheque_book_order",
+      "share_iban",
+      "card_limits",
+      "beneficiaries_management",
+      "securities",
+      "pcontactus",
+      "global_view"
+    ],
+    "serviceParams": [
+      {
+        "serviceId": "kyc",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=PARAM"
+      },
+      {
+        "serviceId": "balances",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_PAN"
+      },
+      {
+        "serviceId": "transfer",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_SNAV2_VIR"
+      },
+      {
+        "serviceId": "rate_inquiry",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=CONV_DEV"
+      },
+      {
+        "serviceId": "logoff",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=DECO_MOB1.5"
+      },
+      {
+        "serviceId": "togglelang",
+        "serviceParam": "sessionid=53C7760DF9C58F5FEE2482279E3DB8D40A25D14F4D5E228D"
+      },
+      {
+        "serviceId": "read_message",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=MESS_SECU"
+      },
+      {
+        "serviceId": "pending_transfers",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_SNAV2_VAT"
+      },
+      {
+        "serviceId": "lost_stolen_card",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_SNAV1_OPP"
+      },
+      {
+        "serviceId": "cheque_book_order",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_CHQ"
+      },
+      {
+        "serviceId": "share_iban",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_RIB"
+      },
+      {
+        "serviceId": "card_limits",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=CARTE_PLAF"
+      },
+      {
+        "serviceId": "beneficiaries_management",
+        "serviceParam": "sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=AJOUT_IBAN"
+      },
+      {
+        "serviceId": "securities",
+        "serviceParam": "sessionid=47E5DE088E506B2CFE0887AC784D2DADCC558653A673D2C2&debr=BOURSE_INV"
+      },
+      {
+        "serviceId": "pcontactus",
+        "serviceParam": ""
+      },
+      {
+        "serviceId": "step_up",
+        "serviceParam": "sessionid=F1E2E6C04EFC66BFCE0B2C4AB4C3AF6314CB3769E9ADE30F"
+      }
+    ],
+    "icc": "3005600000002058955",
+    "customerType": "ADV",
+    "sessionPath": "emmob_PM2"
+  }
+}
+Entitlement (from the PIB) OK
+POST:https://client.oat2.hsbc.fr/cgi-bin/emmob_PM2?sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_PAN
+{ request: 
+   { debugId: 6,
+     uri: 'https://client.oat2.hsbc.fr/cgi-bin/emmob_PM2?sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=COMPTES_PAN',
+     method: 'POST',
+     headers: 
+      { host: 'client.oat2.hsbc.fr',
+        cookie: 'SCID2dbe5=7BC49019AD6968AB88BEAA5F553748A6B026A4B6B700F962; HBFR-BAD-OAT=!+aP7/nRKGX7jfLG/gjUlRAJ4c87D8Uus/cqk6XGwqtasJHeNU+B1hzdI0UYBtV0SukEeJ8gQSxHSiJM=',
+        'content-type': 'application/x-www-form-urlencoded',
+        accept: 'application/json',
+        'content-length': 27 },
+     body: 'locale=fr&ver=1.1&json=true' } }
+{ response: 
+   { debugId: 6,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:55 GMT',
+        server: 'Apache/2.4.7 (Unix) OpenSSL/0.9.8y',
+        'access-control-allow-origin': 'www.eu532.p2g.netd2.hsbc.com.hk',
+        'access-control-allow-methods': 'POST, GET, OPTIONS, DELETE, PUT',
+        'access-control-max-age': '1000',
+        'access-control-allow-headers': 'x-requested-with, Content-Type, origin, authorization, accept, client-security-token',
+        vary: 'Accept-Encoding',
+        'cache-control': 'no-store, no-cache, must-revalidate, max-age=0, private',
+        expires: 'Tue, 06 Jun 2017 08:14:55 GMT',
+        pragma: 'no-cache',
+        'content-type': 'text/html; charset=ISO-8859-15',
+        connection: 'close',
+        'transfer-encoding': 'chunked' },
+     statusCode: 200,
+     body: { body: [Object], header: [Object] } } }
+Get customer context (from the PIB) OK
+{"body":{"entities":[{"newMsgNumber":"0","accountGroups":[{"accounts":[{"desc":"COMPTE MME WAKAYAMA LUGINA","hasParent":false,"accountNum":"01020029276.EUR","ccy":{"desc":"EUR","code":"EUR"},"type":"DD","id":"CPTP","accountDate":"","balance":"10 475,74","drCr":false,"sessionParam":"sessionid=01862F0C4C2819654698C3B6B15C3ACECF6D64CBDAE4D629&Cpt=-1&posCptSel=0"},{"desc":"CARTE VISA CLASSIC","hasParent":false,"accountNum":"4971 46XX XXXX 4316","ccy":{"desc":"EUR","code":"EUR"},"type":"PCC","id":"CB0","accountDate":"","balance":"0,00","drCr":false,"sessionParam":"sessionid=6BBADEC44F707EC1BBBC7ECA47EAF68DC52A59FD351CED49&Cb=0"},{"desc":"EUR","hasParent":false,"accountNum":"01020065761.EUR","ccy":{"desc":"EUR","code":"EUR"},"type":"OTH","id":"EP0","accountDate":"","balance":"33,87","drCr":false,"sessionParam":"sessionid=A6D73DA314829E9C8C71FBC98C07DAF81DBC35AFA0F224BF&Epa=0"},{"desc":"VIE HAUSSMANN SELECT","hasParent":false,"accountNum":"00000511/703244","ccy":{"desc":"EUR","code":"EUR"},"type":"OTH","id":"EP1","accountDate":"","balance":"12 241,15","drCr":false,"sessionParam":""}]}]}]},"header":{"version":"1.1","token":"0.978857826450252","errorMsg":[],"statusCode":"0000"}}
+POST:https://client.oat2.hsbc.fr/cgi-bin/emmob_PM2?sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=DECO_MOB1.5
+{ request: 
+   { debugId: 7,
+     uri: 'https://client.oat2.hsbc.fr/cgi-bin/emmob_PM2?sessionid=06547D5E0B501DB0E14DE3DABA75D1278527112A042966BA&debr=DECO_MOB1.5',
+     method: 'POST',
+     headers: 
+      { host: 'client.oat2.hsbc.fr',
+        cookie: 'SCID2dbe5=7BC49019AD6968AB88BEAA5F553748A6B026A4B6B700F962; HBFR-BAD-OAT=!+aP7/nRKGX7jfLG/gjUlRAJ4c87D8Uus/cqk6XGwqtasJHeNU+B1hzdI0UYBtV0SukEeJ8gQSxHSiJM=',
+        'content-type': 'application/x-www-form-urlencoded',
+        accept: 'application/json',
+        'content-length': 27 },
+     body: 'locale=fr&ver=1.1&json=true' } }
+{ response: 
+   { debugId: 7,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:55 GMT',
+        server: 'Apache/2.4.7 (Unix) OpenSSL/0.9.8y',
+        'access-control-allow-origin': 'www.eu532.p2g.netd2.hsbc.com.hk',
+        'access-control-allow-methods': 'POST, GET, OPTIONS, DELETE, PUT',
+        'access-control-max-age': '1000',
+        'access-control-allow-headers': 'x-requested-with, Content-Type, origin, authorization, accept, client-security-token',
+        vary: 'Accept-Encoding',
+        'cache-control': 'no-store, no-cache, must-revalidate, max-age=0, private',
+        expires: 'Tue, 06 Jun 2017 08:14:55 GMT',
+        pragma: 'no-cache',
+        'content-type': 'text/html; charset=ISO-8859-15',
+        connection: 'close',
+        'transfer-encoding': 'chunked' },
+     statusCode: 200,
+     body: { header: [Object], body: {} } } }
+Logoff (from the PIB) OK
+{"header":{"token":"","version":"1.0","statusCode":"0000","errorMsg":[]},"body":{}}
+POST:https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.mobile15.system-maintenance
+{ request: 
+   { debugId: 8,
+     uri: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.mobile15.system-maintenance',
+     method: 'POST',
+     headers: 
+      { host: 'www.eu532.p2g.netd2.hsbc.com.hk',
+        cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=Cxnfpoa/igfOgHxdnYRMcqJb+e4=; LB_COOKIE_1=912314890.22528.0000; LtpaToken2=Qy0MYjNT4JRcsvt/ED4ojxlRn1ddIQ2LgyH9tKnzekj4BunFLF8Zf6pG3Uaz/JvA//3DOpHzRUN0vOmRhJF6DmNdP54/5gQPLuoXwbQeBtfYAXwJ8Vx/Eg4aDyztdThalTEJ4dP5+fPiNGpY5gH5cTRMawR0XJ3xkqb/h+3eH0uO8HElcXIYQ+LUHgE1GgtOwpxsNgwgYvk+8QMt30u0t5XuMwlfdz1MQCqLCwQdvnGIxWfx1xFoeZTkR57FdBF3OTuvsAWyyAum6Zix23CoeK4EEkjfc0IsXauM1/0KlS8ipAY6sROg4UWk62vHA+psRl7Q+Qm0YUlxzkR+mIV8B5o4kG4KK8mc3LAtfyz1+gVpkeCakm1ZaNZyy2PRMAmdtDDqxGNvzgi38V8KfawD9NN8iKUyfk9nWdQ3dZy2MavQ1VeRYUiREkSHcdlXucArgcKie3TfJCBMlY0TEnzWk0kOxQJa6Q9jDEQlS/8giD/2ZGV3pAtfNUJcKovB0YeYUoer8MwU/+91ovIQbMD01AHiIK4K5hACW9+1YRstdS1ARcNGxKs5Y5bZGXhalwVRui6ZYXSmxDdheKC8kEd2Bj9PIYDGBn5sOHONzaEc9GvZEpJCFibE8lnjMx/JncZgVFHtM8FJu6Lwedm8qpBpELGbNSuDfuN3SNS5zuoErMtOOr08i+XEpcBGi9CK7k+QYEisr8c7+9mztgxQNvRKQaQ/iQZSjbiSSuKeuboMVoprkbAa10qpkSB1SMSr9dYNdeFzuI7nw/slnXqPJqwFW99Xo9/dmPXud3sbClr6CODTIAVdZ56GFIl51Vn3azlLMc0bJ1QQIC5U0UP3qZ5Rcw==; LtpaToken=7O13d71foiFChcJwBzGjkviXKU2cbMrco6gduDD44AvUuZFuw1n3EYolddp3ugCrnHhNszFhWGlJGL5pZAaBgKIuM9tdI6EntmpZkrZjiPRGyO4PaQrbiMXjBEbRrg2odc8flUUPCLW3l7+5BgdkZfn7xIrjJJbCnFuJ44Tb+efkoADBe+SzxKM8bxnuKTBTPo2s8cn6ZQ8JbtmLuhLYAD83HFylyO1UTPMro+dLWqb/KhSSsFIZlb7sK6zPwjRbsa0D/qjXcrlyTVb3PkvP7ZHdOLZy8IVxfD8wtBL6Q3cuOPFbbfQykju7zhVpnXu/GXA7Zfzb6Y586OXAKp2yg6aD8YeaEUXXt/Gyiy2hRldUhakoN8nQ7AQyMMNavJQMXsPIaQAqJY61HbJuTUSsJiG+FOHWWOMT2UthuPS9diKl7pre1WZIOw==',
+        'content-type': 'application/x-www-form-urlencoded',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        'content-length': 13 },
+     body: 'ver=1.1&json=' } }
+{ redirect: 
+   { debugId: 8,
+     statusCode: 302,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:57 GMT',
+        vary: 'DECRYPTED,User-Agent',
+        location: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwN_J1NDDyNfV39vV1cDQwsDPTD9KM8yzPcTUC6DQwMDPUj9aMMgWROvn5ulEVluqOiIgDEdkMX/',
+        'content-length': '0',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/plain',
+        'content-language': 'en' },
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwN_J1NDDyNfV39vV1cDQwsDPTD9KM8yzPcTUC6DQwMDPUj9aMMgWROvn5ulEVluqOiIgDEdkMX/' } }
+{ request: 
+   { debugId: 8,
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwN_J1NDDyNfV39vV1cDQwsDPTD9KM8yzPcTUC6DQwMDPUj9aMMgWROvn5ulEVluqOiIgDEdkMX/',
+     method: 'GET',
+     headers: 
+      { cookie: 'JSESSIONID=0000R3RT4-e87IzECZo8NbNu9Xm:16tf3ve5h; CAMToken=Cxnfpoa/igfOgHxdnYRMcqJb+e4=; LB_COOKIE_1=912314890.22528.0000; LtpaToken2=Qy0MYjNT4JRcsvt/ED4ojxlRn1ddIQ2LgyH9tKnzekj4BunFLF8Zf6pG3Uaz/JvA//3DOpHzRUN0vOmRhJF6DmNdP54/5gQPLuoXwbQeBtfYAXwJ8Vx/Eg4aDyztdThalTEJ4dP5+fPiNGpY5gH5cTRMawR0XJ3xkqb/h+3eH0uO8HElcXIYQ+LUHgE1GgtOwpxsNgwgYvk+8QMt30u0t5XuMwlfdz1MQCqLCwQdvnGIxWfx1xFoeZTkR57FdBF3OTuvsAWyyAum6Zix23CoeK4EEkjfc0IsXauM1/0KlS8ipAY6sROg4UWk62vHA+psRl7Q+Qm0YUlxzkR+mIV8B5o4kG4KK8mc3LAtfyz1+gVpkeCakm1ZaNZyy2PRMAmdtDDqxGNvzgi38V8KfawD9NN8iKUyfk9nWdQ3dZy2MavQ1VeRYUiREkSHcdlXucArgcKie3TfJCBMlY0TEnzWk0kOxQJa6Q9jDEQlS/8giD/2ZGV3pAtfNUJcKovB0YeYUoer8MwU/+91ovIQbMD01AHiIK4K5hACW9+1YRstdS1ARcNGxKs5Y5bZGXhalwVRui6ZYXSmxDdheKC8kEd2Bj9PIYDGBn5sOHONzaEc9GvZEpJCFibE8lnjMx/JncZgVFHtM8FJu6Lwedm8qpBpELGbNSuDfuN3SNS5zuoErMtOOr08i+XEpcBGi9CK7k+QYEisr8c7+9mztgxQNvRKQaQ/iQZSjbiSSuKeuboMVoprkbAa10qpkSB1SMSr9dYNdeFzuI7nw/slnXqPJqwFW99Xo9/dmPXud3sbClr6CODTIAVdZ56GFIl51Vn3azlLMc0bJ1QQIC5U0UP3qZ5Rcw==; LtpaToken=7O13d71foiFChcJwBzGjkviXKU2cbMrco6gduDD44AvUuZFuw1n3EYolddp3ugCrnHhNszFhWGlJGL5pZAaBgKIuM9tdI6EntmpZkrZjiPRGyO4PaQrbiMXjBEbRrg2odc8flUUPCLW3l7+5BgdkZfn7xIrjJJbCnFuJ44Tb+efkoADBe+SzxKM8bxnuKTBTPo2s8cn6ZQ8JbtmLuhLYAD83HFylyO1UTPMro+dLWqb/KhSSsFIZlb7sK6zPwjRbsa0D/qjXcrlyTVb3PkvP7ZHdOLZy8IVxfD8wtBL6Q3cuOPFbbfQykju7zhVpnXu/GXA7Zfzb6Y586OXAKp2yg6aD8YeaEUXXt/Gyiy2hRldUhakoN8nQ7AQyMMNavJQMXsPIaQAqJY61HbJuTUSsJiG+FOHWWOMT2UthuPS9diKl7pre1WZIOw==',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        referer: 'https://eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk/1/3/?idv_cmd=idv.Logoff&nextPage=hbfr.mobile15.system-maintenance',
+        host: 'www.eu532.p2g.netd2.hsbc.com.hk' } } }
+{ redirect: 
+   { debugId: 8,
+     statusCode: 302,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:14:59 GMT',
+        vary: 'DECRYPTED,User-Agent',
+        location: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/04_Sj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTzdvQJNDDzDLAx9fUxCDAwcjfQLsh0VAYgmMqM!/',
+        'content-length': '0',
+        'set-cookie': [Array],
+        expires: 'Thu, 01 Dec 1994 16:00:00 GMT',
+        'cache-control': 'no-cache="set-cookie, set-cookie2"',
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/plain',
+        'content-language': 'en' },
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/04_Sj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTzdvQJNDDzDLAx9fUxCDAwcjfQLsh0VAYgmMqM!/' } }
+{ request: 
+   { debugId: 8,
+     uri: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/2/!ut/p/b1/04_Sj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTzdvQJNDDzDLAx9fUxCDAwcjfQLsh0VAYgmMqM!/',
+     method: 'GET',
+     headers: 
+      { cookie: 'CAMToken=; LB_COOKIE_1=912314890.22528.0000',
+        authorization: 'Basic ZXU1MzJ1c2VyOlByMHRlY3Q=',
+        accept: 'application/json',
+        referer: 'https://www.eu532.p2g.netd2.hsbc.com.hk/1/3/!ut/p/b1/04_SjzQ0tTC2NDM2NzXWj9CPykssy0xPLMnMz0vMAfGjzOLdPUwtDB29DTwN_J1NDDyNfV39vV1cDQwsDPTD9KM8yzPcTUC6DQwMDPUj9aMMgWROvn5ulEVluqOiIgDEdkMX/',
+        host: 'www.eu532.p2g.netd2.hsbc.com.hk' } } }
+{ response: 
+   { debugId: 8,
+     headers: 
+      { date: 'Tue, 06 Jun 2017 08:15:01 GMT',
+        vary: 'DECRYPTED,User-Agent,Accept-Encoding,Cookie',
+        'ibm-web2-location': '/1/2/!ut/p/b1/jcs5DsIwFEXRtWQFfraD_VN-gWIbkjAj4ga5QChShgaxfkJHB-WVzhVRtFKjUAVJMuIq4phe3SM9u2lM_aejuTm_IMkbBLfe5wgXknWVnwBWM2i_wdYeFELjd7UMpYaz__1Lxz63FUAzRGB_tua4UmD962_8NNzFEPuSOMvefJF2_g!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'content-location': '/1/2/!ut/p/b1/jcs5DsIwFEXRtWQFfraD_VN-gWIbkjAj4ga5QChShgaxfkJHB-WVzhVRtFKjUAVJMuIq4phe3SM9u2lM_aejuTm_IMkbBLfe5wgXknWVnwBWM2i_wdYeFELjd7UMpYaz__1Lxz63FUAzRGB_tua4UmD962_8NNzFEPuSOMvefJF2_g!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/',
+        'cache-control': 'no-cache, no-store, must-revalidate',
+        expires: 'Thu, 01 Jan 1970 00:00:00 GMT',
+        pragma: 'no-cache',
+        'content-length': '208',
+        'set-cookie': [Array],
+        s: 'tkdp2-eu532',
+        connection: 'close',
+        'content-type': 'text/html; charset=UTF-8',
+        'content-language': 'en' },
+     statusCode: 200,
+     body: { body: {}, header: [Object] } } }
+Logoff (from IDnV) OK
+{"body":{},"header":{"version":"1.1","token":"","errorMsg":[],"statusCode":"0000"}}

@@ -62,21 +62,23 @@ var r = request
 
 // Globals
 // ----------------------------------------------------------------------
-const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
+//const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
 //const sdehost = "dtest-evrgrn-friif.lp.hsbc.co.uk";
-//const sdehost = "www.hsbc.fr";
+const sdehost = "www.hsbc.fr";
 
-const pibhost = 'client.oat2.hsbc.fr';
-//const pibhost = "client.hsbc.fr";
+//const pibhost = 'client.oat2.hsbc.fr';
+const pibhost = "client.hsbc.fr";
+//const pibhost = "d3njlp2u3e5oqv.cloudfront.net";
+//const pibhost = "d3njlp2u3e5oqv.cloudfront.net";
 //const pibhost = "sylp.client.hsbc.fr";
 var user = {
     //id: '02100157235', // Business card only holder (carambar, chomeur)
     //id: '02930007827', // standard user (carambar, platini)
     //id: '01724387351', // private bank user (carambar, chomeur)
     //id: '01010097250', // Normal user (carambar, chomeur)
-    //id: '31564944768', // Normal user (carambar, platini)
+    //id: '33730489975', // Vincent account
     id: '01020029276', // Normal user (carambar, platini)
-    //id: "33730489975",
+    
     password: "carambar",
     memorableAnswer: "platini",
     rccDigits: []
@@ -183,7 +185,6 @@ r.post('https://' + sdehost + '/1/2/',
 
     console.log(chalk.white.bgGreen.bold('Get LocalSSO OK'));
 
-
     // get Customer information and localSSO
     customerInfo = reply.body;
 
@@ -195,14 +196,12 @@ r.post('https://' + sdehost + '/1/2/',
     "lastLogonDate": "30/05/2017 17:52:39",
     "isISFSupported": false,
     "lastLogonStatus": true
-
     */
 
     // Next : entitlement WEBACC mob (parametre)
     // https://client.hsbc.fr/cgi-bin/emmob%3FAppl%3DWEBACC
     //"https://" + pibhost + "/cgi-bin/emmob%3FAppl%3DWEBACC"
     return r.get("https://" + pibhost + "/cgi-bin/emmob?Appl=WEBACC&Mob="+customerInfo.ssoToken)
-
 })
 // _________________________________________________________________
 // Then wait the next response back from WEBACC
@@ -214,25 +213,25 @@ r.post('https://' + sdehost + '/1/2/',
         return Promise.reject(reply);
     }
 
-        console.log(chalk.white.bgGreen.bold('Entitlement (from the PIB) OK'));
+    console.log(chalk.white.bgGreen.bold('Entitlement (from the PIB) OK'));
 
-        // Process data from entitlement and keep it
-        menus = reply.body.serviceIds;
-        params = reply.body.serviceParams;
-        sessionPath = reply.body.sessionPath;
+    // Process data from entitlement and keep it
+    menus = reply.body.serviceIds;
+    params = reply.body.serviceParams;
+    sessionPath = reply.body.sessionPath;
 
-        var balanceLink = getAction(params,"balances");
-        var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "?" +balanceLink;
+    var balanceLink = getAction(params,"balances");
+    var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "?" +balanceLink;
 
-        console.log(chalk.magenta("POST:" + request));
-        return r.post(request, {
-            form: {
-                "locale":locale,
-                "ver":"1.1",
-                "json":"true"
-                }
-        });
-    })
+    console.log(chalk.magenta("POST:" + request));
+    return r.post(request, {
+        form: {
+            "locale":locale,
+            "ver":"1.1",
+            "json":"true"
+            }
+    });
+})
 
 // _________________________________________________________________
 // Then wait the next response back (balances for instance)
@@ -279,7 +278,6 @@ r.post('https://' + sdehost + '/1/2/',
             "json": ""
         }
     });
-
 })
 //
 // _________________________________________________________________

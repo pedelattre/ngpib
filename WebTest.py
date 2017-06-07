@@ -22,7 +22,7 @@ class WebTest(unittest.TestCase):
         element = self.driver.find_element_by_css_selector(
             'body > app-root > div > main > section > app-login > div > h2'
             )
-        self.assertEquals(element.text, u'Connectez vous \xe0 votre banque en ligne')
+        self.assertEquals(element.text, u'Connecte toi \xe0 votre banque en ligne')
 
     def testLoginPageHomePage2(self):
         """ Test memorable question label """
