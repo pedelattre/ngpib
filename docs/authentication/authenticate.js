@@ -50,32 +50,47 @@ var messages = {
 
 // ------------------------------------------------------------------------------------------------------------------------
 // Configure request
+const PROXY_USER='your user';
+const PROXY_PASS='your password';
+
 var r = request
     .defaults({
         strictSSL: false, // test environment uses invalid ssl certificates
         followAllRedirects: true,
         json: true,
         //resolveWithFullResponse: true,
-        jar: true // takes set-cookies into account
-        //'proxy':'http://$pplsoft$:$password$@uk-proxy-01.systems.uk.hsbc' // if required to exit corporate network
+        jar: true, // takes set-cookies into account
+        header : {
+            'Accept-Language':'en-US,en;q=0.8,fr-FR;q=0.6,fr;q=0.4',
+            'Accept':'*/*',
+            'Accept-Encoding':'application/x-www-form-urlencoded',
+            'DNT':'1',
+            'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/45.0.2454.101 Safari/537.36'
+        },
+        //proxy:'http://'+ PROXY_USER +':' + PROXY_PASS + '@uk-proxy-01.systems.uk.hsbc' // if required to exit corporate network
     });
 
 // Globals
 // ----------------------------------------------------------------------
-//const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk';
-//const sdehost = "dtest-evrgrn-friif.lp.hsbc.co.uk";
-const sdehost = "www.hsbc.fr";
 
-//const pibhost = 'client.oat2.hsbc.fr';
-const pibhost = "client.hsbc.fr";
-//const pibhost = "d3njlp2u3e5oqv.cloudfront.net";
-//const pibhost = "d3njlp2u3e5oqv.cloudfront.net";
-//const pibhost = "sylp.client.hsbc.fr";
+// PWS (Authentication system using IDnV)
+const sdehost = 'eu532user:Pr0tect@www.eu532.p2g.netd2.hsbc.com.hk'; //OAT
+//const sdehost = "dtest-evrgrn-friif.lp.hsbc.co.uk"; // LP
+//const sdehost = "www.hsbc.fr"; // PROD
+
+// PIB (Personal Internet Banking)
+const pibhost = 'client.oat2.hsbc.fr'; // OAT
+//const pibhost = "client.hsbc.fr"; // PROD
+//const pibhost = "d3njlp2u3e5oqv.cloudfront.net"; // OAT AWS
+//const pibhost = "d50mfkke5itw7.cloudfront.net"; // PROD AWS
+//const pibhost = "api.clients.hsbc.fr"; // PROD AWS
+//const pibhost = "sylp.client.hsbc.fr"; // LP
+
 var user = {
     //id: '02100157235', // Business card only holder (carambar, chomeur)
     //id: '02930007827', // standard user (carambar, platini)
     //id: '01724387351', // private bank user (carambar, chomeur)
-    //id: '01010097250', // Normal user (carambar, chomeur)
+    //DOUTEUX id: '01010097250', // Normal user (carambar, chomeur)
     //id: '33730489975', // Vincent account
     id: '01020029276', // Normal user (carambar, platini)
     
@@ -84,7 +99,6 @@ var user = {
     rccDigits: []
 };
 var locale = "fr";
-
 
 // ########################################################################
 // First Post to Authentication (user id is verified)
@@ -199,8 +213,6 @@ r.post('https://' + sdehost + '/1/2/',
     */
 
     // Next : entitlement WEBACC mob (parametre)
-    // https://client.hsbc.fr/cgi-bin/emmob%3FAppl%3DWEBACC
-    //"https://" + pibhost + "/cgi-bin/emmob%3FAppl%3DWEBACC"
     return r.get("https://" + pibhost + "/cgi-bin/emmob?Appl=WEBACC&Mob="+customerInfo.ssoToken)
 })
 // _________________________________________________________________
@@ -220,7 +232,7 @@ r.post('https://' + sdehost + '/1/2/',
     params = reply.body.serviceParams;
     sessionPath = reply.body.sessionPath;
 
-    var balanceLink = getAction(params,"balances");
+    var balanceLink = getAction(params,"beneficiaries_management");
     var request="https://" + pibhost + "/cgi-bin/" + sessionPath + "?" +balanceLink;
 
     console.log(chalk.magenta("POST:" + request));
@@ -243,7 +255,7 @@ r.post('https://' + sdehost + '/1/2/',
     // Process the response from entitlement
     // TODO : do it lazy !
     console.log(chalk.white.bgGreen.bold('Get customer context (from the PIB) OK'));
-    console.log(chalk.white.bgBlue(JSON.stringify(reply)));
+    console.log(chalk.white.bgBlue(reply));
 
     // CAll for logout
     var logoffLink = getAction(params, "logoff");

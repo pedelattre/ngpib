@@ -16,21 +16,13 @@ class WebTest(unittest.TestCase):
         """ Open Chromedriver connection ont top of all tests """
         cls.driver = webdriver.Chrome('./chromedriver')
 
-    def testLoginPageHomePage(self):
+    def testLoginPageHomePageFr(self):
         """ Test title """
         self.driver.get(URL)
         element = self.driver.find_element_by_css_selector(
-            'body > app-root > div > main > section > app-login > div > h2'
+            'body > app-root > div > header > app-header > div > div:nth-child(1) > div.pull-left > span'
             )
-        self.assertEquals(element.text, u'Connecte toi \xe0 votre banque en ligne')
-
-    def testLoginPageHomePage2(self):
-        """ Test memorable question label """
-        self.driver.get(URL)
-        element = self.driver.find_element_by_css_selector(
-            'body > app-root > div > main > section > app-login > div > form > div:nth-child(2) > label'
-            )
-        self.assertEquals(element.text, u'Memorable answer')
+        self.assertEquals(element.text, u'HSBC France, votre banque en ligne')
 
     @classmethod
     def tearDownClass(cls):
