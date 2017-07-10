@@ -50,9 +50,12 @@ var messages = {
 
 // ------------------------------------------------------------------------------------------------------------------------
 // Configure request
+
+// You shall not pass without a proxy setting 
 const PROXY_USER='your user';
 const PROXY_PASS='your password';
 
+// request module needs to be like a real navigator 
 var r = request
     .defaults({
         strictSSL: false, // test environment uses invalid ssl certificates
